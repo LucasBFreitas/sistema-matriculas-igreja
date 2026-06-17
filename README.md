@@ -143,3 +143,29 @@ Melhorias visuais aplicadas sem alterar banco de dados ou regras de negócio:
 - Cards do painel com visual premium.
 - Formulários, botões, listas e tabelas modernizados.
 - Responsividade melhorada para celular.
+
+
+## Versão 12.0.1
+
+Padronização visual dos formulários:
+
+- Correção da tela Professores, onde os campos estavam muito próximos.
+- Padronização do espaçamento entre campos de preenchimento.
+- Padronização do espaçamento entre botões e campos.
+- Aplicação do mesmo padrão visual utilizado na tela Novo Aluno.
+- Ajuste visual aplicado aos formulários de:
+  - Alunos
+  - Professores
+  - Cursos
+  - Turmas
+  - Inscrições
+
+### Como atualizar
+
+1. Substitua os arquivos no GitHub.
+2. Faça commit das alterações.
+3. Aguarde a Vercel publicar automaticamente ou faça Redeploy.
+
+### Banco de Dados
+
+- Esta versão não precisa de SQL novo.

@@ -1123,3 +1123,62 @@ th{
     grid-template-columns:1fr!important;
   }
 }
+
+
+/* ==================================================
+   V12.0.1 - PADRONIZAÇÃO DE FORMULÁRIOS
+   Mantém todos os campos com espaçamento uniforme.
+================================================== */
+
+.card form,
+form.card,
+form.form-grid,
+.card.form-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:16px !important;
+}
+
+.form-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:16px !important;
+}
+
+.card input,
+.card select,
+.card textarea,
+form.card input,
+form.card select,
+form.card textarea{
+    margin-bottom:0 !important;
+}
+
+.card form button,
+form.card button,
+.form-grid button{
+    margin-top:20px !important;
+    align-self:flex-start;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.card .actions button,
+.actions button{
+    margin-top:0 !important;
+}
+
+.toolbar input,
+.toolbar select{
+    margin-bottom:0 !important;
+}
+
+@media(max-width:768px){
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
