@@ -695,3 +695,7 @@ header.topbar{
 .modern-login input[type="email"]{margin-bottom:14px !important;}
 .modern-login input[type="password"]{margin-bottom:14px !important;}
 .card form input,.card form select{margin-bottom:10px;}
+
+/* ===== V12 - VAGAS E PERÍODOS ===== */
+.item small strong{font-weight:900}
+select option:disabled{color:#b91c1c}

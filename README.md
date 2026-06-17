@@ -97,3 +97,19 @@ Alterações:
 IMPORTANTE:
 Antes de subir esta versão, rode no Supabase:
 supabase/atualizacao_v11.sql
+
+
+## Versão 12
+
+Alterações:
+- Reformulado o controle de vagas das turmas.
+- As turmas agora mostram vagas totais, ocupadas e disponíveis.
+- O sistema bloqueia novas inscrições quando o limite de vagas da turma é atingido.
+- Criada uma tela/tabela separada chamada Períodos.
+- O período é cadastrado uma vez e vinculado à turma.
+- A turma passa a selecionar um período cadastrado.
+- Ao renovar, o sistema pergunta para qual período o aluno está sendo renovado.
+
+IMPORTANTE:
+Antes de subir esta versão, rode no Supabase:
+supabase/atualizacao_v12.sql
