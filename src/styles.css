@@ -696,6 +696,8 @@ header.topbar{
 .modern-login input[type="password"]{margin-bottom:14px !important;}
 .card form input,.card form select{margin-bottom:10px;}
 
-/* ===== V12 - VAGAS E PERÍODOS ===== */
-.item small strong{font-weight:900}
+/* ===== V12 CORRIGIDA - VAGAS E PERÍODOS ===== */
 select option:disabled{color:#b91c1c}
+.item small strong{font-weight:900}
+.vagas-alerta{background:#FEF3C7;color:#92400E;border-radius:999px;padding:4px 8px;font-weight:900}
+.vagas-lotada{background:#FEE2E2;color:#991B1B;border-radius:999px;padding:4px 8px;font-weight:900}

@@ -101,15 +101,49 @@ supabase/atualizacao_v11.sql
 
 ## Versão 12
 
-Alterações:
-- Reformulado o controle de vagas das turmas.
-- As turmas agora mostram vagas totais, ocupadas e disponíveis.
-- O sistema bloqueia novas inscrições quando o limite de vagas da turma é atingido.
-- Criada uma tela/tabela separada chamada Períodos.
-- O período é cadastrado uma vez e vinculado à turma.
-- A turma passa a selecionar um período cadastrado.
-- Ao renovar, o sistema pergunta para qual período o aluno está sendo renovado.
+Melhorias de controle de vagas, períodos e inscrições:
 
-IMPORTANTE:
-Antes de subir esta versão, rode no Supabase:
-supabase/atualizacao_v12.sql
+### Tela de Login
+
+- Título alterado para:
+  - Bem-vindo de volta
+- Subtítulo alterado para:
+  - Acesse para gerenciar suas matrículas
+- Ajustado espaçamento entre os campos de E-mail e Senha.
+
+### Controle de Turmas
+
+- Reformulação do campo de quantidade de vagas.
+- Exibição de vagas totais, vagas ocupadas e vagas disponíveis.
+- Contador de vagas disponíveis por turma.
+- Bloqueio automático de novas inscrições quando a turma atingir o limite definido.
+
+### Períodos Letivos
+
+- Criação da tabela periodos_turma.
+- Nova tela de cadastro de Períodos.
+- Possibilidade de configurar:
+  - Nome do período
+  - Período das aulas
+  - Período de férias
+  - Recomeço das aulas
+  - Encerramento das aulas
+- Associação dos períodos às turmas.
+
+### Inscrições
+
+- O campo de turma mostra quantas vagas ainda estão disponíveis.
+- Turmas lotadas ficam bloqueadas para novas inscrições.
+- Ao renovar uma inscrição, o sistema pergunta para qual período o aluno será matriculado.
+- Após cancelar uma inscrição, o botão Cancelar deixa de ser exibido.
+
+### Banco de Dados
+
+- Criado arquivo:
+  - supabase/atualizacao_v12.sql
+
+### Como atualizar
+
+1. No Supabase, rode `supabase/atualizacao_v12.sql`.
+2. Substitua os arquivos no GitHub.
+3. Aguarde a Vercel publicar automaticamente ou faça Redeploy sem cache.
