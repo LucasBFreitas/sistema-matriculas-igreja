@@ -123,3 +123,12 @@ Alteração controlada a partir da versão 11.
 Antes de subir essa versão, rode no Supabase:
 
 supabase/atualizacao_v11_1.sql
+
+
+## Versão 11.2
+
+- Novo visual Projeto Social Moderno.
+- Cores inspiradas na identidade Viva Esperança.
+- Cards e formulários modernizados.
+- Bordas arredondadas.
+- Sombras suaves.
