@@ -695,3 +695,8 @@ header.topbar{
 .modern-login input[type="email"]{margin-bottom:14px !important;}
 .modern-login input[type="password"]{margin-bottom:14px !important;}
 .card form input,.card form select{margin-bottom:10px;}
+
+/* ===== V11.1 - VAGAS E SEMESTRE ===== */
+.lotada{display:inline-block!important;background:#FEE2E2;color:#991B1B!important;border-radius:999px;padding:4px 9px;font-weight:900;margin-top:8px}
+.field-label{display:block;font-size:12px;font-weight:800;color:#607080;margin:2px 0 4px}
+select option:disabled{color:#991B1B}

@@ -97,3 +97,29 @@ Alterações:
 IMPORTANTE:
 Antes de subir esta versão, rode no Supabase:
 supabase/atualizacao_v11.sql
+
+## Versão 11.1
+
+Alteração controlada a partir da versão 11.
+
+### Controle de Vagas
+
+- Reformulado o campo de número de vagas em Turmas.
+- Agora o sistema mostra:
+  - Vagas totais
+  - Vagas ocupadas
+  - Vagas disponíveis
+- Quando a turma atinge o limite de vagas, novas inscrições são bloqueadas.
+- No cadastro de inscrições, turmas lotadas aparecem desabilitadas.
+
+### Duração do Semestre
+
+- Adicionados campos com calendário dentro de Turmas:
+  - Data de início do semestre
+  - Data de término do semestre
+
+### Banco de Dados
+
+Antes de subir essa versão, rode no Supabase:
+
+supabase/atualizacao_v11_1.sql
