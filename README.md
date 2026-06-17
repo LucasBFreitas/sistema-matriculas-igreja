@@ -129,3 +129,17 @@ supabase/atualizacao_v11_1.sql
 - Modernização visual inicial.
 - Cards e formulários renovados.
 - Paleta Viva Esperança.
+
+
+## Versão 12.2 UI Premium
+
+Melhorias visuais aplicadas sem alterar banco de dados ou regras de negócio:
+
+- Tela de login premium em duas colunas.
+- Área visual com logo Viva Esperança e mensagem institucional.
+- Card de login moderno.
+- Cabeçalho fixo com logo, marca, usuário administrador e botão Sair.
+- Navegação horizontal moderna com ícones.
+- Cards do painel com visual premium.
+- Formulários, botões, listas e tabelas modernizados.
+- Responsividade melhorada para celular.

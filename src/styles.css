@@ -726,3 +726,400 @@ input,select,textarea{
  border-radius:14px!important;
  border:1px solid #d9e2e8!important;
 }
+
+
+/* ===== V12.2 UI PREMIUM - PROJETO SOCIAL MODERNO ===== */
+
+:root{
+  --premium-green:#2E7D32;
+  --premium-green-2:#43A047;
+  --premium-green-soft:#E8F5E9;
+  --premium-bg:#F5F8F6;
+  --premium-card:#FFFFFF;
+  --premium-text:#1F2937;
+  --premium-muted:#6B7280;
+  --premium-border:#DDE7E0;
+  --premium-shadow:0 18px 45px rgba(31,41,55,.08);
+}
+
+/* Login premium em duas colunas */
+.premium-login-page{
+  max-width:none!important;
+  min-height:100vh!important;
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr!important;
+  align-items:center!important;
+  gap:0!important;
+  padding:0!important;
+  background:linear-gradient(135deg,#F7FBF8 0%,#E8F5E9 100%)!important;
+}
+
+.premium-login-page::before,
+.premium-login-page::after{
+  display:none!important;
+}
+
+.login-hero-panel{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px;
+  background:
+    linear-gradient(135deg,rgba(46,125,50,.92),rgba(67,160,71,.82)),
+    radial-gradient(circle at 30% 20%,rgba(255,255,255,.28),transparent 32%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.login-hero-panel::after{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  right:-110px;
+  bottom:-120px;
+  border-radius:50%;
+  background:rgba(255,255,255,.13);
+}
+
+.login-hero-content{
+  position:relative;
+  z-index:1;
+  max-width:460px;
+  text-align:center;
+}
+
+.login-hero-content img{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  background:#fff;
+  border:6px solid rgba(255,255,255,.88);
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+  margin-bottom:24px;
+}
+
+.login-hero-content h2{
+  font-size:42px;
+  line-height:1.05;
+  margin:0 0 14px;
+  font-weight:900;
+}
+
+.login-hero-content p{
+  font-size:18px;
+  line-height:1.55;
+  margin:0;
+  opacity:.94;
+}
+
+.premium-login-card{
+  width:min(420px,calc(100% - 40px))!important;
+  margin:auto!important;
+  padding:42px!important;
+  border-radius:26px!important;
+  box-shadow:var(--premium-shadow)!important;
+  border:1px solid rgba(221,231,224,.8)!important;
+}
+
+.premium-login-card h1{
+  font-size:30px!important;
+  margin-bottom:8px!important;
+  color:var(--premium-text)!important;
+}
+
+.premium-login-card p{
+  color:var(--premium-muted)!important;
+  margin-bottom:28px!important;
+}
+
+.premium-login-card input{
+  height:48px!important;
+  border-radius:14px!important;
+  background:#F8FAFC!important;
+  margin-bottom:14px!important;
+}
+
+.premium-login-card button{
+  width:100%!important;
+  height:48px!important;
+  margin-top:6px!important;
+  background:linear-gradient(135deg,var(--premium-green),var(--premium-green-2))!important;
+  border-radius:14px!important;
+}
+
+/* Estrutura do app */
+.app-shell{
+  max-width:none!important;
+  min-height:100vh;
+  padding:0!important;
+  background:var(--premium-bg)!important;
+}
+
+/* Cabeçalho */
+.premium-header,
+.app-header-fixed{
+  position:sticky!important;
+  top:0!important;
+  z-index:30!important;
+  min-height:76px!important;
+  padding:14px 28px!important;
+  background:rgba(255,255,255,.92)!important;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--premium-border)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  box-shadow:0 8px 26px rgba(31,41,55,.05)!important;
+}
+
+.brand-fixed{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+}
+
+.brand-logo-fixed{
+  width:50px!important;
+  height:50px!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  background:#fff!important;
+  border:1px solid var(--premium-border)!important;
+}
+
+.brand-wordmark{
+  height:50px!important;
+  object-fit:contain!important;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.admin-pill{
+  padding:9px 13px;
+  border-radius:999px;
+  background:var(--premium-green-soft);
+  color:var(--premium-green);
+  font-size:13px;
+  font-weight:800;
+}
+
+.logout-fixed{
+  background:#fff!important;
+  color:var(--premium-text)!important;
+  border:1px solid var(--premium-border)!important;
+  box-shadow:none!important;
+  padding:10px 16px!important;
+  border-radius:12px!important;
+}
+
+/* Navegação estilo sidebar horizontal premium */
+.tabs{
+  margin:0!important;
+  padding:16px 28px!important;
+  display:flex!important;
+  gap:10px!important;
+  background:var(--premium-bg)!important;
+  border-bottom:0!important;
+  overflow-x:auto;
+}
+
+.tabs button{
+  flex:0 0 auto;
+  border:1px solid var(--premium-border)!important;
+  background:#fff!important;
+  color:var(--premium-text)!important;
+  padding:12px 16px!important;
+  border-radius:16px!important;
+  font-weight:850!important;
+  box-shadow:0 8px 20px rgba(31,41,55,.04)!important;
+}
+
+.tabs button:hover{
+  transform:translateY(-1px)!important;
+  border-color:rgba(46,125,50,.35)!important;
+}
+
+.tabs button.active{
+  background:linear-gradient(135deg,var(--premium-green),var(--premium-green-2))!important;
+  color:#fff!important;
+  border-color:transparent!important;
+}
+
+/* Conteúdo */
+.app-shell > .erro,
+.app-shell > .ok,
+.loading-premium,
+.app-shell > section,
+.app-shell > .grid,
+.app-shell > .card{
+  margin-left:28px!important;
+  margin-right:28px!important;
+}
+
+.grid{
+  gap:20px!important;
+}
+
+.cards{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+
+.cards .card{
+  min-height:140px;
+  position:relative;
+  overflow:hidden;
+  border-radius:24px!important;
+  background:#fff!important;
+  border:1px solid var(--premium-border)!important;
+  box-shadow:var(--premium-shadow)!important;
+}
+
+.cards .card::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  right:-36px;
+  top:-36px;
+  border-radius:50%;
+  background:var(--premium-green-soft);
+}
+
+.cards .card h2{
+  font-size:38px!important;
+  margin:0 0 4px!important;
+  color:var(--premium-green)!important;
+}
+
+.cards .card p{
+  color:var(--premium-muted)!important;
+  font-weight:800;
+}
+
+.card{
+  border-radius:24px!important;
+  border:1px solid var(--premium-border)!important;
+  box-shadow:var(--premium-shadow)!important;
+  background:#fff!important;
+}
+
+.card h2{
+  color:var(--premium-text)!important;
+  font-weight:900!important;
+}
+
+input,select,textarea{
+  border-radius:14px!important;
+  background:#F8FAFC!important;
+  border:1px solid #DDE7E0!important;
+  min-height:44px;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:var(--premium-green)!important;
+  box-shadow:0 0 0 4px rgba(46,125,50,.12)!important;
+  background:#fff!important;
+}
+
+button{
+  background:linear-gradient(135deg,var(--premium-green),var(--premium-green-2))!important;
+  border-radius:14px!important;
+  box-shadow:0 10px 22px rgba(46,125,50,.18)!important;
+}
+
+button.secondary{
+  background:#374151!important;
+}
+
+button.danger{
+  background:linear-gradient(135deg,#EF4444,#B91C1C)!important;
+}
+
+button.warning{
+  background:linear-gradient(135deg,#F59E0B,#B45309)!important;
+}
+
+.item{
+  border-radius:18px!important;
+  border:1px solid var(--premium-border)!important;
+  background:#fff!important;
+  padding:16px!important;
+  box-shadow:0 8px 18px rgba(31,41,55,.04)!important;
+}
+
+.item:hover{
+  box-shadow:0 16px 30px rgba(31,41,55,.08)!important;
+  transform:translateY(-1px);
+}
+
+.status{
+  border-radius:999px!important;
+  padding:5px 10px!important;
+}
+
+table{
+  border-radius:18px!important;
+  overflow:hidden;
+  border:1px solid var(--premium-border)!important;
+}
+
+th{
+  background:var(--premium-green-soft)!important;
+  color:var(--premium-green)!important;
+  font-weight:900!important;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .premium-login-page{
+    grid-template-columns:1fr!important;
+  }
+  .login-hero-panel{
+    min-height:260px!important;
+    padding:30px 20px!important;
+  }
+  .login-hero-content img{
+    width:104px;
+    height:104px;
+    margin-bottom:12px;
+  }
+  .login-hero-content h2{
+    font-size:28px;
+  }
+  .login-hero-content p{
+    font-size:15px;
+  }
+  .premium-header,
+  .app-header-fixed{
+    padding:12px 14px!important;
+  }
+  .brand-wordmark{
+    height:38px!important;
+  }
+  .admin-pill{
+    display:none;
+  }
+  .tabs{
+    padding:12px 14px!important;
+  }
+  .app-shell > .erro,
+  .app-shell > .ok,
+  .loading-premium,
+  .app-shell > section,
+  .app-shell > .grid,
+  .app-shell > .card{
+    margin-left:14px!important;
+    margin-right:14px!important;
+  }
+  .cards{
+    grid-template-columns:1fr!important;
+  }
+}
