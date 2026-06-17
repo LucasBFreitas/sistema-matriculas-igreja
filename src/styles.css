@@ -1,0 +1,697 @@
+
+:root{
+  font-family:Inter, Arial, Helvetica, sans-serif;
+  color:#142235;
+  background:linear-gradient(135deg,#e7f7ff 0%,#ecf9ef 100%);
+  --azul:#24a8e8;
+  --azul-escuro:#167fbe;
+  --verde:#65b82f;
+  --verde-escuro:#3d8b1f;
+  --amarelo:#ffd84d;
+  --texto:#142235;
+  --muted:#607080;
+  --card:#ffffff;
+  --borda:#cfe3dc;
+  --input:#f1fbf6;
+  --sombra:0 18px 45px rgba(18,52,75,.09);
+}
+*{box-sizing:border-box}
+body{margin:0}
+main{max-width:1280px;margin:auto;padding:0 18px 26px}
+
+/* LOGIN */
+.login-page{
+  max-width:none;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%);
+}
+.login-page::before{
+  content:"";
+  width:116px;
+  height:116px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:5px solid rgba(255,255,255,.9);
+  margin-bottom:14px;
+}
+.login-page::after{
+  content:"Projeto Viva Esperança";
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+}
+.login-card{
+  width:100%;
+  max-width:420px;
+}
+.modern-login{
+  text-align:left;
+  padding:38px 40px;
+  border-radius:18px;
+}
+.login-logo{display:none}
+.modern-login h1{
+  margin:0 0 4px;
+  font-size:24px;
+  color:#142235;
+  letter-spacing:-.02em;
+}
+.modern-login p{
+  margin:0 0 28px;
+  color:#607080;
+}
+.login-footer{
+  text-align:center;
+  margin-top:24px;
+  font-size:13px;
+  color:#607080;
+}
+.login-footer strong{color:#3d8b1f}
+
+/* APP HEADER */
+.app-header{
+  margin:14px auto 0;
+  min-height:70px;
+  background:#fff;
+  border-bottom:1px solid #cfe3dc;
+  border-radius:0;
+  padding:14px 26px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 18px rgba(20,50,74,.04);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand-logo{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid #dbeee5;
+}
+.brand h1{
+  margin:0;
+  font-size:18px;
+  color:#24a8e8;
+  letter-spacing:-.02em;
+}
+.brand p{
+  margin:1px 0 0;
+  color:#607080;
+  font-size:12px;
+}
+.logout-btn{
+  background:#fff;
+  color:#405365;
+  border:1px solid #cfe0e7;
+  box-shadow:none;
+}
+.logout-btn:hover{background:#f6fbff}
+
+/* NAV */
+.tabs{
+  display:flex;
+  gap:0;
+  flex-wrap:wrap;
+  margin:0 0 30px;
+  background:#fff;
+  border-bottom:1px solid #cfe3dc;
+  padding:0 18px;
+}
+.tabs button{
+  border:none;
+  background:transparent;
+  color:#405365;
+  padding:15px 18px;
+  border-radius:0;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:none;
+  border-bottom:3px solid transparent;
+}
+.tabs button:hover{
+  color:#24a8e8;
+  background:#f6fbff;
+  transform:none;
+}
+.tabs button.active{
+  color:#24a8e8;
+  background:transparent;
+  border-bottom-color:#24a8e8;
+  box-shadow:none;
+}
+
+/* TITLES */
+.page-title{
+  margin:0 0 22px;
+}
+.page-title h2{
+  font-size:24px;
+  margin:0;
+  color:#142235;
+}
+.page-title p{
+  margin:4px 0 0;
+  color:#607080;
+}
+
+/* BUTTONS */
+button{
+  border:none;
+  background:linear-gradient(135deg,#32b5eb,#167fbe);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(36,168,232,.18);
+  transition:.16s ease;
+}
+button:hover{transform:translateY(-1px)}
+button.secondary{background:#405365}
+button.danger{background:#dc2626;color:#fff}
+button.warning{background:#d99000;color:#fff}
+button.small{
+  padding:7px 11px;
+  font-size:12px;
+  border-radius:8px;
+  box-shadow:none;
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  border:1px solid #cfe3dc;
+  border-radius:12px;
+  padding:28px;
+  box-shadow:0 16px 34px rgba(20,50,74,.06);
+}
+.grid{display:grid;gap:26px}
+.two{grid-template-columns:1fr 1fr}
+.cards{grid-template-columns:repeat(4,1fr)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-title{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.card h2{
+  margin:0 0 22px;
+  font-size:20px;
+  color:#142235;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block;
+}
+.dot.blue{background:#24a8e8}
+.dot.green{background:#65b82f}
+h3{
+  color:#142235;
+  font-size:20px;
+  margin:24px 0 14px;
+}
+
+/* FORMS */
+input,select,textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #cfe0d6;
+  border-radius:8px;
+  margin-bottom:0;
+  font-size:14px;
+  background:#f1fbf6;
+  color:#142235;
+  outline:none;
+  transition:.16s ease;
+}
+input::placeholder,textarea::placeholder{color:#7a8793}
+input:focus,select:focus,textarea:focus{
+  border-color:#24a8e8;
+  box-shadow:0 0 0 3px rgba(36,168,232,.12);
+  background:#fff;
+}
+textarea{
+  min-height:86px;
+  margin-top:12px;
+}
+
+/* ALERTS */
+.erro{
+  background:#fee2e2;
+  color:#991b1b;
+  padding:11px;
+  border-radius:10px;
+  margin:8px 0;
+  border:1px solid #fecaca;
+}
+.ok{
+  background:#dcfce7;
+  color:#166534;
+  padding:11px;
+  border-radius:10px;
+  margin:8px 0;
+  border:1px solid #bbf7d0;
+}
+.toolbar{
+  display:grid;
+  grid-template-columns:1fr 140px;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+/* LIST */
+.item{
+  border:1px solid #d5e7de;
+  border-radius:10px;
+  padding:15px 18px;
+  margin-bottom:10px;
+  background:#f7fffb;
+  transition:.16s ease;
+}
+.item:hover{
+  border-color:rgba(36,168,232,.35);
+  box-shadow:0 8px 18px rgba(20,50,74,.06);
+}
+.item.inactive{background:#fafafa;border-style:dashed}
+.item strong,.item span,.item small{display:block}
+.item strong{
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.item small{
+  color:#607080;
+  margin-top:5px;
+  line-height:1.35;
+}
+.actions{
+  margin-top:12px;
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+/* STATUS */
+.status{
+  display:inline-flex!important;
+  align-items:center;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.matriculado{background:#DCFCE7;color:#166534}
+.sem-matricula{background:#FEF3C7;color:#92400E}
+.nao-matriculado{background:#FEF3C7;color:#92400E}
+.inativo{background:#FEE2E2;color:#991B1B}
+.excluido{background:#DC2626;color:#FFFFFF}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin-top:12px;
+  overflow:hidden;
+  border-radius:10px;
+  border:1px solid #d5e7de;
+}
+th,td{text-align:left;border-bottom:1px solid #e5eef5;padding:10px}
+th{background:#edf9f4;color:#167fbe}
+tr:last-child td{border-bottom:none}
+
+@media(max-width:900px){
+  main{padding:0 10px 20px}
+  .two,.cards,.form-grid,.toolbar{grid-template-columns:1fr}
+  .app-header{border-radius:0;padding:12px}
+  .tabs{padding:0 8px;overflow:auto;flex-wrap:nowrap}
+  .tabs button{white-space:nowrap}
+  .card{padding:18px}
+  table{font-size:13px}
+}
+
+
+/* ===== AJUSTES V8 - LOGIN E CABEÇALHO ===== */
+
+.login-page{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%) !important;
+}
+
+.login-page::before{
+  content:"";
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff !important;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:4px solid rgba(255,255,255,.95) !important;
+  margin-bottom:14px;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+  font-size:15px;
+}
+
+.modern-login{
+  text-align:left;
+  padding:38px 40px !important;
+  border-radius:18px !important;
+}
+
+.modern-login .login-logo{
+  display:none !important;
+}
+
+.modern-login h1{
+  margin:0 0 6px !important;
+  font-size:26px !important;
+  color:#142235 !important;
+  letter-spacing:-.02em;
+}
+
+.modern-login p{
+  margin:0 0 28px !important;
+  color:#607080 !important;
+  line-height:1.35;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+.modern-login button{
+  width:100%;
+  margin-top:8px;
+  padding:13px 14px;
+}
+
+.app-header{
+  margin:0 auto !important;
+  min-height:72px !important;
+  background:#ffffff !important;
+  border-bottom:1px solid #cfe3dc !important;
+  border-radius:0 !important;
+  padding:14px 24px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  box-shadow:0 4px 18px rgba(20,50,74,.04) !important;
+}
+
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.brand-logo{
+  width:42px !important;
+  height:42px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:1px solid #dbeee5 !important;
+  background:#fff !important;
+}
+
+.brand h1{
+  margin:0 !important;
+  font-size:20px !important;
+  color:#24a8e8 !important;
+  letter-spacing:-.02em;
+  font-weight:900;
+}
+
+.brand p{
+  display:none !important;
+}
+
+.logout-btn{
+  margin-left:auto !important;
+  background:#ffffff !important;
+  color:#405365 !important;
+  border:1px solid #cfe0e7 !important;
+  box-shadow:none !important;
+  padding:10px 15px !important;
+}
+
+.logout-btn:hover{
+  background:#f6fbff !important;
+}
+
+
+
+
+/* ===== V9 - CABEÇALHO FIXO E LOGIN CORRIGIDOS ===== */
+
+.login-page{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%) !important;
+}
+
+.login-page::before{
+  content:"";
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff !important;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:4px solid rgba(255,255,255,.95) !important;
+  margin-bottom:14px;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+  font-size:15px;
+}
+
+.modern-login .login-logo{
+  display:none !important;
+}
+
+.modern-login h1{
+  margin:0 0 6px !important;
+  font-size:26px !important;
+  color:#142235 !important;
+  letter-spacing:-.02em;
+}
+
+.modern-login p{
+  margin:0 0 28px !important;
+  color:#607080 !important;
+  line-height:1.35;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+.modern-login button{
+  width:100%;
+  margin-top:8px;
+  padding:13px 14px;
+}
+
+/* Cabeçalho superior visível */
+.app-header-fixed{
+  width:100%;
+  min-height:74px;
+  background:#ffffff;
+  border-bottom:1px solid #cfe3dc;
+  padding:14px 24px;
+  display:flex !important;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  box-shadow:0 4px 18px rgba(20,50,74,.05);
+  margin:0 0 0 0;
+  position:relative;
+  z-index:10;
+}
+
+.brand-fixed{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo-fixed{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#fff;
+  border:1px solid #dbeee5;
+  flex:0 0 auto;
+}
+
+.brand-fixed h1{
+  margin:0;
+  font-size:22px;
+  font-weight:900;
+  color:#24a8e8;
+  letter-spacing:-.02em;
+}
+
+.logout-fixed{
+  margin-left:auto;
+  background:#ffffff !important;
+  color:#405365 !important;
+  border:1px solid #cfe0e7 !important;
+  box-shadow:none !important;
+  padding:10px 16px !important;
+  border-radius:10px !important;
+  font-weight:800;
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+}
+
+.logout-fixed:hover{
+  background:#f6fbff !important;
+}
+
+/* Garante que o menu venha abaixo do cabeçalho */
+.tabs{
+  margin-top:0 !important;
+}
+
+/* Esconde apenas headers antigos se ainda sobrarem duplicados */
+header.app-header,
+header.hero,
+header.topbar{
+  display:none !important;
+}
+
+@media(max-width:900px){
+  .app-header-fixed{
+    padding:12px;
+  }
+  .brand-fixed h1{
+    font-size:18px;
+  }
+  .brand-logo-fixed{
+    width:40px;
+    height:40px;
+  }
+}
+
+
+/* ===== V10 - LOGO LIMPA E WORDMARK DA MARCA ===== */
+
+.login-page::before{
+  background:url('/logo-viva-esperanca.png') center/cover no-repeat,#fff !important;
+  border:4px solid rgba(255,255,255,.95) !important;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+}
+
+.brand-logo-fixed{
+  width:48px !important;
+  height:48px !important;
+  object-fit:cover !important;
+  border-radius:50% !important;
+  border:1px solid #dbeee5 !important;
+  background:#fff !important;
+  flex:0 0 auto;
+}
+
+.brand-wordmark{
+  height:52px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.brand-fixed h1,
+.brand-fixed p{
+  display:none !important;
+}
+
+.app-header-fixed{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  min-height:74px !important;
+}
+
+.brand-fixed{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.logout-fixed{
+  margin-left:auto !important;
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+@media(max-width:700px){
+  .brand-wordmark{
+    height:40px;
+  }
+  .brand-logo-fixed{
+    width:42px !important;
+    height:42px !important;
+  }
+}
+
+/* ===== V11 - AJUSTES DE LOGIN, VAGAS E PERÍODOS ===== */
+.modern-login h1{margin:0 0 6px !important;}
+.modern-login p{display:block !important;margin:0 0 28px !important;}
+.modern-login input[type="email"]{margin-bottom:14px !important;}
+.modern-login input[type="password"]{margin-bottom:14px !important;}
+.card form input,.card form select{margin-bottom:10px;}
