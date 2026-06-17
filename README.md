@@ -47,3 +47,17 @@ Layout ajustado conforme referência enviada:
 - Cards e formulários com visual mais leve e profissional.
 - Campos com fundo verde bem claro.
 - Lista de estudantes com visual mais organizado.
+
+
+## Versão 8
+
+Correções solicitadas:
+- Tela de login com logo preenchendo o círculo, sem borda/parte escura.
+- Texto abaixo da logo: Projeto Viva Esperança.
+- Removido "Projeto Social da Igreja" da tela de login.
+- Título da tela de login: Bem-vindo de volta.
+- Frase abaixo: Acesse sua conta para gerenciar as inscrições.
+- Ajuste de espaçamento entre e-mail e senha.
+- Após login, botão Sair posicionado no canto superior direito.
+- Cabeçalho superior trocado para Viva esperança.
+- Removido "Projeto Social da Igreja" do cabeçalho após login.

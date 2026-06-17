@@ -349,3 +349,130 @@ tr:last-child td{border-bottom:none}
   .card{padding:18px}
   table{font-size:13px}
 }
+
+
+/* ===== AJUSTES V8 - LOGIN E CABEÇALHO ===== */
+
+.login-page{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%) !important;
+}
+
+.login-page::before{
+  content:"";
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff !important;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:4px solid rgba(255,255,255,.95) !important;
+  margin-bottom:14px;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+  font-size:15px;
+}
+
+.modern-login{
+  text-align:left;
+  padding:38px 40px !important;
+  border-radius:18px !important;
+}
+
+.modern-login .login-logo{
+  display:none !important;
+}
+
+.modern-login h1{
+  margin:0 0 6px !important;
+  font-size:26px !important;
+  color:#142235 !important;
+  letter-spacing:-.02em;
+}
+
+.modern-login p{
+  margin:0 0 28px !important;
+  color:#607080 !important;
+  line-height:1.35;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+.modern-login button{
+  width:100%;
+  margin-top:8px;
+  padding:13px 14px;
+}
+
+.app-header{
+  margin:0 auto !important;
+  min-height:72px !important;
+  background:#ffffff !important;
+  border-bottom:1px solid #cfe3dc !important;
+  border-radius:0 !important;
+  padding:14px 24px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  box-shadow:0 4px 18px rgba(20,50,74,.04) !important;
+}
+
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.brand-logo{
+  width:42px !important;
+  height:42px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:1px solid #dbeee5 !important;
+  background:#fff !important;
+}
+
+.brand h1{
+  margin:0 !important;
+  font-size:20px !important;
+  color:#24a8e8 !important;
+  letter-spacing:-.02em;
+  font-weight:900;
+}
+
+.brand p{
+  display:none !important;
+}
+
+.logout-btn{
+  margin-left:auto !important;
+  background:#ffffff !important;
+  color:#405365 !important;
+  border:1px solid #cfe0e7 !important;
+  box-shadow:none !important;
+  padding:10px 15px !important;
+}
+
+.logout-btn:hover{
+  background:#f6fbff !important;
+}
+
+.topbar,
+.hero{
+  display:none !important;
+}
