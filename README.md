@@ -169,3 +169,13 @@ Padronização visual dos formulários:
 ### Banco de Dados
 
 - Esta versão não precisa de SQL novo.
+
+
+## Versão 12.0.2
+
+Correção nos relatórios:
+
+- Turmas lotadas agora aparecem normalmente no filtro de Relatórios.
+- É possível emitir relatório mesmo quando a turma não tem vagas disponíveis.
+- O bloqueio por limite de vagas continua valendo apenas para novas inscrições.
+- Esta versão não precisa de SQL novo.
