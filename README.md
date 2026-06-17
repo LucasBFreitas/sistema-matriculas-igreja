@@ -1,14 +1,19 @@
-# Sistema de Matrículas v2
+# Sistema de Matrículas - Versão 3
 
 Novidades:
-- Editar todos os dados do aluno
-- Inativar/ativar aluno
-- Excluir aluno
-- Buscar endereço automático pelo CEP
-- Campos separados de endereço
+- Status ao lado do aluno: Matriculado, Inativo ou Sem matrícula
+- Cadastro, edição e exclusão de professores
+- Professor associado à turma
+- Edição e exclusão de cursos
+- Edição e exclusão de turmas
+- Cancelamento de matrículas
+- Telefone formatado como (99) 99999-9999
+- CPF formatado como 999999999-99
+- Relatório geral e por turma com aluno, turma e professor
+- Impressão de relatório
 
-## Atualização obrigatória
-Antes de enviar essa versão para o GitHub/Vercel, rode no Supabase o arquivo:
-`supabase/alteracoes_alunos.sql`
+## Como atualizar
 
-Depois envie os arquivos para o GitHub e faça Redeploy na Vercel.
+1. No Supabase, rode o arquivo `supabase/atualizacao_v3.sql` no SQL Editor.
+2. No GitHub, envie/substitua os arquivos desta versão.
+3. Aguarde o deploy automático da Vercel ou faça Redeploy.
