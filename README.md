@@ -35,3 +35,15 @@ Atualização visual:
 - Cards, formulários e listas mais modernos.
 - Tela de login personalizada com a logo.
 - Mantém as cores dos status de alunos.
+
+
+## Versão 7
+
+Layout ajustado conforme referência enviada:
+- Tela de login com logo centralizada no topo.
+- Texto abaixo da logo: Projeto Viva Esperança.
+- Cabeçalho interno mais limpo, com logo pequena à esquerda.
+- Menu horizontal branco com indicador azul.
+- Cards e formulários com visual mais leve e profissional.
+- Campos com fundo verde bem claro.
+- Lista de estudantes com visual mais organizado.
