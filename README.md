@@ -24,3 +24,14 @@ Correção visual dos badges de status dos alunos:
 - Excluído: fundo vermelho forte (#DC2626) e texto branco (#FFFFFF)
 
 Também ajusta o texto do status de "Não matriculado" para "Sem matrícula".
+
+
+## Versão 6
+
+Atualização visual:
+- Logo Viva Esperança adicionada.
+- Cabeçalho moderno com capa/hero nas cores do projeto.
+- Botões arredondados e com gradiente.
+- Cards, formulários e listas mais modernos.
+- Tela de login personalizada com a logo.
+- Mantém as cores dos status de alunos.
