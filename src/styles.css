@@ -1188,23 +1188,7 @@ form.card button,
 /* Turmas lotadas continuam bloqueadas apenas no cadastro de inscrições.
    Nos relatórios elas devem aparecer normalmente para consulta/impressão. */
 
-
-/* ===== V12.0.8 - ZONA AUTOMÁTICA ===== */
-input[readonly]{
-  background:#F0FDF4!important;
-  color:#166534!important;
-  font-weight:800;
-}
-
-
-/* ===== V12.0.9 - CAMPOS ALUNO ===== */
-.card select{
-  min-height:44px;
-}
-
-
-/* ===== V12.0.9 FIX - CAMPOS ALUNO ===== */
-input:disabled{
-  opacity:.65;
-  cursor:not-allowed;
-}
+/* ===== V12.0.9 SAFE - CAMPOS ALUNO ===== */
+input[readonly]{background:#F0FDF4!important;color:#166534!important;font-weight:800}
+input:disabled{opacity:.65;cursor:not-allowed}
+.card select{min-height:44px}

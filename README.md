@@ -1,19 +1,17 @@
-# Sistema de Matrículas - Versão 12.0.9 FIX
+# Sistema de Matrículas - V12.0.9 SAFE
 
-## Correção
+Campos novos em Alunos:
 
-- Corrigido erro de build no `main.jsx`.
-- Campo Sexo no cadastro de alunos.
-- Campo Possui deficiência.
-- Campo Qual deficiência.
-- Campo Qual deficiência fica desabilitado quando "Possui deficiência" estiver como Não.
+- Sexo
+- Possui deficiência
+- Qual deficiência
+- Zona automática
 
-## SQL necessário
-
-Rode uma única vez:
+Antes de subir, rode no Supabase:
 
 ```sql
 alter table alunos add column if not exists sexo text;
 alter table alunos add column if not exists possui_deficiencia text default 'Não';
 alter table alunos add column if not exists qual_deficiencia text;
+alter table alunos add column if not exists zona text;
 ```
