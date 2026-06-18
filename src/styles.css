@@ -1204,3 +1204,8 @@ input:disabled{opacity:.65;cursor:not-allowed}
 .item strong + small{
   margin-top:6px;
 }
+
+
+/* ===== V12.2.1 - LIMPEZA DO FORMULÁRIO DE TURMAS ===== */
+/* Campos de período da turma foram removidos da interface.
+   A definição de período agora deve ser feita exclusivamente na aba Períodos. */

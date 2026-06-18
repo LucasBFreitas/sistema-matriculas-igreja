@@ -1,0 +1,3 @@
+-- V12.2.1
+-- Esta versão não precisa de alterações no banco de dados.
+-- Apenas remove da interface os campos antigos de período da tela de Turmas.
