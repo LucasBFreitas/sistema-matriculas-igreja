@@ -1,17 +1,16 @@
-# Sistema de Matrículas - Versão 12.0.8
+# Sistema de Matrículas - V12.0.8 Fix
 
-## V12.0.8 – Zona automática no cadastro de alunos
+## Zona automática no cadastro de alunos
 
-Alterações implementadas:
+- Adiciona campo Zona no cadastro de alunos.
+- Define automaticamente a Zona conforme o bairro.
+- Se o bairro não estiver na lista, usa a Cidade como Zona.
+- Inclui correção de build do main.jsx.
 
-- Adicionado campo `Zona` no cadastro de alunos.
-- A Zona é definida automaticamente conforme o bairro informado.
-- Ao buscar o CEP, o sistema preenche bairro, cidade, logradouro e também a Zona.
-- Se o bairro não estiver na lista de Natal/RN, a Zona recebe a mesma informação da Cidade.
-- A Zona aparece na listagem dos alunos.
+## SQL necessário
 
-## Banco de dados
+Rode uma única vez no Supabase:
 
-Antes de subir esta versão, rode no Supabase:
-
-`supabase/atualizacao_v12_0_8.sql`
+```sql
+alter table alunos add column if not exists zona text;
+```
