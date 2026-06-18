@@ -1,13 +1,14 @@
-# Sistema de Matrículas - V12.0.9 SAFE
+# Sistema de Matrículas - V12.0.9 Build Fix
 
-Campos novos em Alunos:
+Correção do erro de build em `src/main.jsx`.
 
+Inclui:
 - Sexo
 - Possui deficiência
 - Qual deficiência
 - Zona automática
 
-Antes de subir, rode no Supabase:
+SQL necessário:
 
 ```sql
 alter table alunos add column if not exists sexo text;
