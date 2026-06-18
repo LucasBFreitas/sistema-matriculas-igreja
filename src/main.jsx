@@ -76,6 +76,20 @@ function App(){
   w.document.close()
   w.print()
 }
+ const turmasAtivas=turmas.length
+ const matriculasAtivas=matriculas.filter(m=>m.status!=='cancelada').length
+ const vagasTotais=turmas.reduce((acc,t)=>acc+Number(t.vagas||0),0)
+ const vagasOcupadasTotal=turmas.reduce((acc,t)=>acc+vagasOcupadas(t.id),0)
+ const vagasDisponiveisTotal=Math.max(vagasTotais-vagasOcupadasTotal,0)
+ const ocupacaoGeral=vagasTotais?Math.round((vagasOcupadasTotal/vagasTotais)*100):0
+ const turmasLotadas=turmas.filter(t=>turmaLotada(t)).length
+ const turmasResumo=turmas.map(t=>{
+  const total=Number(t.vagas||0)
+  const ocupadas=vagasOcupadas(t.id)
+  const disponiveis=Math.max(total-ocupadas,0)
+  const percentual=total?Math.min(100,Math.round((ocupadas/total)*100)):0
+  return {...t,total,ocupadas,disponiveis,percentual}
+ }).sort((a,b)=>b.percentual-a.percentual)
  const contagem=useMemo(()=>({ativos:alunosAtivos.length,matriculados:alunos.filter(a=>statusDoAluno(a)==='Matriculado').length,inativos:alunos.filter(a=>statusDoAluno(a)==='Inativo').length,excluidos:alunos.filter(a=>statusDoAluno(a)==='Excluído').length}),[alunos,matriculas])
  if(!session)return <main className="login-page premium-login-page"><section className="login-hero-panel"><div className="login-hero-content"><img src="/logo-viva-esperanca.png" alt="Logo Viva Esperança"/><h2>Projeto Viva Esperança</h2><p>Gestão simples, acolhedora e organizada para matrículas do projeto social.</p></div></section><form className="card login-card premium-login-card" onSubmit={login}><h1>Bem-vindo de volta</h1>
         <p>Acesse para gerenciar suas matrículas</p><input placeholder="E-mail" value={email} onChange={e=>setEmail(e.target.value)} type="email" required/><input placeholder="Senha" value={senha} onChange={e=>setSenha(e.target.value)} type="password" required/>{erro&&<div className="erro">{erro}</div>}<button>Entrar</button></form></main>
@@ -90,7 +104,63 @@ function App(){
           <button className="logout-fixed" onClick={sair}>Sair</button>
         </div>
       </header><nav className="tabs">{abas.map(([id,n])=><button key={id} className={aba===id?'active':''} onClick={()=>setAba(id)}>{n}</button>)}</nav>{erro&&<div className="erro">{erro}</div>}{msg&&<div className="ok">{msg}</div>}{loading&&<p className="loading-premium">Atualizando dados...</p>}
- {aba==='painel'&&<section className="grid cards"><div className="card"><h2>{contagem.ativos}</h2><p>Alunos ativos</p></div><div className="card"><h2>{contagem.matriculados}</h2><p>Matriculados</p></div><div className="card"><h2>{contagem.inativos}</h2><p>Inativos</p></div><div className="card"><h2>{contagem.excluidos}</h2><p>Excluídos</p></div></section>}
+ {aba==='painel'&&<section className="dashboard-inteligente">
+  <div className="dashboard-hero card">
+    <div>
+      <span className="dashboard-kicker">Visão gerencial</span>
+      <h2>Dashboard Inteligente</h2>
+      <p>Acompanhe matrículas, vagas e ocupação das turmas em tempo real.</p>
+    </div>
+    <div className="dashboard-score">
+      <strong>{ocupacaoGeral}%</strong>
+      <span>Ocupação geral</span>
+    </div>
+  </div>
+
+  <div className="grid cards smart-cards">
+    <div className="card stat-card"><span className="stat-icon">👨‍🎓</span><h2>{contagem.ativos}</h2><p>Alunos ativos</p></div>
+    <div className="card stat-card"><span className="stat-icon">📝</span><h2>{matriculasAtivas}</h2><p>Matrículas ativas</p></div>
+    <div className="card stat-card"><span className="stat-icon">🏫</span><h2>{turmasAtivas}</h2><p>Turmas cadastradas</p></div>
+    <div className="card stat-card"><span className="stat-icon">✅</span><h2>{vagasDisponiveisTotal}</h2><p>Vagas disponíveis</p></div>
+  </div>
+
+  <div className="grid two dashboard-grid">
+    <div className="card">
+      <div className="form-title">
+        <h2>Ocupação das turmas</h2>
+        <span className="admin-pill">{turmasLotadas} lotadas</span>
+      </div>
+      {turmasResumo.length===0&&<p className="muted">Nenhuma turma cadastrada ainda.</p>}
+      {turmasResumo.map(t=><div className="turma-progress" key={t.id}>
+        <div className="turma-progress-head">
+          <div>
+            <strong>{t.cursos?.nome} - {t.nome}</strong>
+            <small>Professor: {t.professores?.nome||'Não informado'}</small>
+          </div>
+          <span className={t.disponiveis===0&&t.total>0?'pill danger-pill':t.disponiveis<=3&&t.total>0?'pill warn-pill':'pill ok-pill'}>
+            {t.total>0 ? `${t.disponiveis} vagas` : 'Sem limite'}
+          </span>
+        </div>
+        <div className="progress-line">
+          <div style={{width:`${t.percentual}%`}}></div>
+        </div>
+        <div className="turma-progress-foot">
+          <span>{t.ocupadas}/{t.total||'∞'} ocupadas</span>
+          <span>{t.percentual}%</span>
+        </div>
+      </div>)}
+    </div>
+
+    <div className="card management-panel">
+      <h2>Indicadores de vagas</h2>
+      <div className="indicator-row"><span>Vagas totais</span><strong>{vagasTotais}</strong></div>
+      <div className="indicator-row"><span>Vagas ocupadas</span><strong>{vagasOcupadasTotal}</strong></div>
+      <div className="indicator-row"><span>Vagas disponíveis</span><strong>{vagasDisponiveisTotal}</strong></div>
+      <div className="indicator-row"><span>Turmas lotadas</span><strong>{turmasLotadas}</strong></div>
+      <div className="mini-note">Use esta visão para acompanhar rapidamente onde ainda existem vagas e quais turmas exigem atenção da coordenação.</div>
+    </div>
+  </div>
+</section>}
  {aba==='alunos'&&<section className="grid two"><form className="card form-grid" onSubmit={salvarAluno}><div className="form-title"><h2>{alunoEditId?'Editar aluno':'Novo aluno'}</h2>{alunoEditId&&<button type="button" className="secondary small" onClick={limparAluno}>Cancelar</button>}</div><div className="form-grid"><input placeholder="Nome do aluno" value={alunoForm.nome} onChange={e=>setAlunoForm({...alunoForm,nome:e.target.value})} required/><input type="date" value={alunoForm.data_nascimento} onChange={e=>setAlunoForm({...alunoForm,data_nascimento:e.target.value})}/><input placeholder="999.999.999-99" value={alunoForm.cpf} onChange={e=>setAlunoForm({...alunoForm,cpf:fmtCPF(e.target.value)})}/><input placeholder="RG" value={alunoForm.rg} onChange={e=>setAlunoForm({...alunoForm,rg:e.target.value})}/><input placeholder="(99) 99999-9999" value={alunoForm.telefone} onChange={e=>setAlunoForm({...alunoForm,telefone:fmtTel(e.target.value)})}/><input placeholder="00000-000" value={alunoForm.cep} onChange={e=>buscarCep(e.target.value)}/><input placeholder="Rua, Av..." value={alunoForm.logradouro} onChange={e=>setAlunoForm({...alunoForm,logradouro:e.target.value})}/><input placeholder="Nº" value={alunoForm.numero} onChange={e=>setAlunoForm({...alunoForm,numero:e.target.value})}/><input placeholder="Apto, Bloco..." value={alunoForm.complemento} onChange={e=>setAlunoForm({...alunoForm,complemento:e.target.value})}/><input placeholder="Bairro" value={alunoForm.bairro} onChange={e=>setAlunoForm({...alunoForm,bairro:e.target.value})}/><input placeholder="Cidade" value={alunoForm.cidade} onChange={e=>setAlunoForm({...alunoForm,cidade:e.target.value})}/></div><textarea placeholder="Observações" value={alunoForm.observacoes} onChange={e=>setAlunoForm({...alunoForm,observacoes:e.target.value})}/><h3>Responsável</h3><div className="form-grid"><input placeholder="Nome do responsável" value={alunoForm.responsavel_nome} onChange={e=>setAlunoForm({...alunoForm,responsavel_nome:e.target.value})}/><input placeholder="CPF responsável" value={alunoForm.responsavel_cpf} onChange={e=>setAlunoForm({...alunoForm,responsavel_cpf:fmtCPF(e.target.value)})}/><input placeholder="Telefone responsável" value={alunoForm.responsavel_telefone} onChange={e=>setAlunoForm({...alunoForm,responsavel_telefone:fmtTel(e.target.value)})}/><input placeholder="E-mail responsável" value={alunoForm.responsavel_email} onChange={e=>setAlunoForm({...alunoForm,responsavel_email:e.target.value})}/></div><button>{alunoEditId?'Salvar alterações':'Salvar aluno'}</button></form><div className="card"><h2>Estudantes</h2><div className="toolbar"><input placeholder="Procurar" value={buscaAluno} onChange={e=>setBuscaAluno(e.target.value)}/><select value={filtroAluno} onChange={e=>setFiltroAluno(e.target.value)}><option value="todos">Todos</option><option value="matriculados">Matriculado</option><option value="nao">Sem matrícula</option><option value="inativos">Inativo</option><option value="excluidos">Excluído</option></select></div>{alunosFiltrados.map(a=>{const st=statusDoAluno(a);return <div className={a.excluido||a.ativo===false?'item inactive':'item'} key={a.id}><strong>{a.nome} <span className={clsStatus(st)}>{st}</span></strong><small>{a.telefone||'-'} | CPF: {a.cpf||'-'}</small><small>{a.logradouro||'-'}, {a.numero||'-'} - {a.bairro||'-'} - {a.cidade||'-'}</small><div className="actions"><button className="small" onClick={()=>editarAluno(a)}>Editar</button>{a.ativo===false||a.excluido?<button className="small" onClick={()=>statusAluno(a.id,true)}>Ativar</button>:<button className="small warning" onClick={()=>statusAluno(a.id,false)}>Inativar</button>}<button className="small danger" onClick={()=>excluirAluno(a.id)}>Excluir</button></div></div>})}</div></section>}
  {aba==='professores'&&<section className="grid two"><form className="card form-grid" onSubmit={salvarProfessor}><h2>{profEditId?'Editar professor':'Novo professor'}</h2><input placeholder="Nome" value={profForm.nome} onChange={e=>setProfForm({...profForm,nome:e.target.value})} required/><input placeholder="CPF" value={profForm.cpf} onChange={e=>setProfForm({...profForm,cpf:fmtCPF(e.target.value)})}/><input placeholder="Telefone" value={profForm.telefone} onChange={e=>setProfForm({...profForm,telefone:fmtTel(e.target.value)})}/><input placeholder="E-mail" value={profForm.email} onChange={e=>setProfForm({...profForm,email:e.target.value})}/><button>{profEditId?'Salvar professor':'Cadastrar professor'}</button>{profEditId&&<button type="button" className="secondary" onClick={limparProfessor}>Cancelar</button>}</form><div className="card"><h2>Professores</h2>{professores.map(p=><div className="item" key={p.id}><strong>{p.nome}</strong><small>{p.telefone||'-'} | {p.email||'-'}</small><div className="actions"><button className="small" onClick={()=>{setProfEditId(p.id);setProfForm({nome:p.nome||'',cpf:p.cpf||'',telefone:p.telefone||'',email:p.email||''})}}>Editar</button><button className="small danger" onClick={()=>excluirProfessor(p.id)}>Excluir</button></div></div>)}</div></section>}
  {aba==='cursos'&&<section className="grid two"><form className="card form-grid" onSubmit={salvarCurso}><h2>{cursoEditId?'Editar curso':'Novo curso'}</h2><input placeholder="Nome" value={cursoForm.nome} onChange={e=>setCursoForm({...cursoForm,nome:e.target.value})} required/><textarea placeholder="Descrição" value={cursoForm.descricao} onChange={e=>setCursoForm({...cursoForm,descricao:e.target.value})}/><button>{cursoEditId?'Salvar curso':'Cadastrar curso'}</button>{cursoEditId&&<button type="button" className="secondary" onClick={limparCurso}>Cancelar</button>}</form><div className="card"><h2>Cursos</h2>{cursos.map(c=><div className="item" key={c.id}><strong>{c.nome}</strong><small>{c.descricao}</small><div className="actions"><button className="small" onClick={()=>{setCursoEditId(c.id);setCursoForm({nome:c.nome||'',descricao:c.descricao||''})}}>Editar</button><button className="small danger" onClick={()=>excluirCurso(c.id)}>Excluir</button></div></div>)}</div></section>}
