@@ -1192,3 +1192,9 @@ form.card button,
 input[readonly]{background:#F0FDF4!important;color:#166534!important;font-weight:800}
 input:disabled{opacity:.65;cursor:not-allowed}
 .card select{min-height:44px}
+
+
+/* ===== V12.1.0 - FILTROS DE RELATÓRIO ===== */
+#relatorio-impressao h1{
+  margin-top:34px;
+}

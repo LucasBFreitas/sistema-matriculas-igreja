@@ -1,0 +1,2 @@
+-- V12.1.0
+-- Esta versão não precisa de alterações no banco de dados.

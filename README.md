@@ -1,18 +1,20 @@
-# Sistema de Matrículas - V12.0.9 Build Fix
+# Sistema de Matrículas - V12.1.0
 
-Correção do erro de build em `src/main.jsx`.
+## Filtros de relatório
 
-Inclui:
-- Sexo
-- Possui deficiência
-- Qual deficiência
-- Zona automática
+Correções implementadas:
 
-SQL necessário:
+- Alunos excluídos não aparecem mais na lista de alunos matriculados.
+- Alunos inativos não aparecem como matriculados.
+- Matrículas canceladas não entram no relatório de matriculados.
+- Adicionados filtros:
+  - Alunos matriculados
+  - Alunos ativos
+  - Alunos sem matrícula
+  - Alunos inativos
+  - Alunos excluídos
+  - Relatório por turma
 
-```sql
-alter table alunos add column if not exists sexo text;
-alter table alunos add column if not exists possui_deficiencia text default 'Não';
-alter table alunos add column if not exists qual_deficiencia text;
-alter table alunos add column if not exists zona text;
-```
+## Banco de dados
+
+Não precisa rodar SQL novo.
