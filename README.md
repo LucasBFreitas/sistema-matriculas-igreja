@@ -193,3 +193,16 @@ Relatórios Premium
 - Resumo de matrículas e vagas.
 - Layout preparado para impressão e PDF.
 - Não requer alterações no banco de dados.
+
+
+## Versão 12.0.5-fix
+
+Correção emergencial da aba Relatórios:
+
+- Corrigido problema de tela em branco ao acessar Relatórios.
+- Mantida a estrutura estável da V12.0.4.
+- A impressão agora pergunta o modelo:
+  - 1 para Relatório Simplificado
+  - 2 para Relatório Institucional
+- Relatório Institucional inclui cabeçalho, logo Viva Esperança e assinatura.
+- Não precisa de SQL novo.
