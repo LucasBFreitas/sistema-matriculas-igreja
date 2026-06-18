@@ -179,3 +179,17 @@ Correção nos relatórios:
 - É possível emitir relatório mesmo quando a turma não tem vagas disponíveis.
 - O bloqueio por limite de vagas continua valendo apenas para novas inscrições.
 - Esta versão não precisa de SQL novo.
+
+
+## Versão 12.0.3
+
+Relatórios Premium
+
+- Inclusão do conceito de dois modelos de relatório:
+  - Simplificado Moderno
+  - Institucional Premium
+- Logo Viva Esperança nos relatórios.
+- Cabeçalho institucional.
+- Resumo de matrículas e vagas.
+- Layout preparado para impressão e PDF.
+- Não requer alterações no banco de dados.
