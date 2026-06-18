@@ -1,17 +1,17 @@
-# Sistema de Matrículas - Versão 12.0.7
+# Sistema de Matrículas - Versão 12.0.8
 
-## V12.0.7 – Ajuste em Inscrições Canceladas
+## V12.0.8 – Zona automática no cadastro de alunos
 
 Alterações implementadas:
 
-- Quando a inscrição está com status `cancelada`, o botão **Cancelar inscrição** não aparece mais.
-- Quando a inscrição está cancelada, o botão **Renovar** passa a aparecer como **Reativar**.
-- Não precisa rodar SQL novo.
+- Adicionado campo `Zona` no cadastro de alunos.
+- A Zona é definida automaticamente conforme o bairro informado.
+- Ao buscar o CEP, o sistema preenche bairro, cidade, logradouro e também a Zona.
+- Se o bairro não estiver na lista de Natal/RN, a Zona recebe a mesma informação da Cidade.
+- A Zona aparece na listagem dos alunos.
 
-## Como atualizar
+## Banco de dados
 
-1. Substitua os arquivos:
-   - `src/main.jsx`
-   - `src/styles.css`
-2. Faça commit no GitHub.
-3. Aguarde o deploy da Vercel.
+Antes de subir esta versão, rode no Supabase:
+
+`supabase/atualizacao_v12_0_8.sql`
