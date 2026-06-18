@@ -1,19 +1,17 @@
-# Sistema de Matrículas - Versão 12.0.6
+# Sistema de Matrículas - Versão 12.0.7
 
-## V12.0.6 – Dashboard Inteligente
+## V12.0.7 – Ajuste em Inscrições Canceladas
 
-Melhorias implementadas:
+Alterações implementadas:
 
-- Ocupação visual das turmas.
-- Indicadores de vagas totais, ocupadas e disponíveis.
-- Cards estatísticos mais modernos.
-- Visão gerencial para coordenação.
-- Lista de turmas com barra de progresso.
-- Indicação visual de turmas lotadas ou com poucas vagas.
-- Sem necessidade de SQL novo.
+- Quando a inscrição está com status `cancelada`, o botão **Cancelar inscrição** não aparece mais.
+- Quando a inscrição está cancelada, o botão **Renovar** passa a aparecer como **Reativar**.
+- Não precisa rodar SQL novo.
 
 ## Como atualizar
 
-1. Substitua os arquivos no GitHub.
-2. Faça commit.
-3. Aguarde o deploy automático da Vercel.
+1. Substitua os arquivos:
+   - `src/main.jsx`
+   - `src/styles.css`
+2. Faça commit no GitHub.
+3. Aguarde o deploy da Vercel.

@@ -1411,3 +1411,9 @@ form.card button,
     flex-direction:column;
   }
 }
+
+
+/* ===== V12.0.7 - INSCRIÇÕES CANCELADAS ===== */
+.item small:has(+ .actions){
+  line-height:1.5;
+}
