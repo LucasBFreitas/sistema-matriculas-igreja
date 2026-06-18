@@ -52,7 +52,7 @@ function App(){
   const agora = new Date().toLocaleString('pt-BR')
   const titulo = tipo === '2' ? 'Relatório Institucional de Matrículas' : 'Relatório Simplificado de Alunos'
   const subtitulo = tipo === '2' ? 'Documento oficial do Projeto Viva Esperança' : 'Resumo de alunos por turma'
-  const assinatura = tipo === '2' ? `<div class="assinatura">____________________________________<br/>Coordenação Projeto Viva Esperança</div>` : ''
+  const assinatura = tipo === '2' ? '<div class="assinatura">____________________________________<br/>Coordenação Projeto Viva Esperança</div>' : ''
   const resumo = tipo === '2' ? `<div class="resumo"><strong>Data de emissão:</strong> ${agora}</div>` : `<div class="resumo"><strong>Emitido em:</strong> ${agora}</div>`
   const w = window.open('', '_blank')
   w.document.write(`<html><head><title>${titulo}</title><style>
@@ -75,7 +75,7 @@ function App(){
   </body></html>`)
   w.document.close()
   w.print()
-}.cab{display:flex;align-items:center;gap:20px;border-bottom:3px solid #3a9c41;padding-bottom:15px;margin-bottom:20px}.cab img{width:80px}.titulo{font-size:28px;font-weight:bold;color:#1f2937}table{width:100%;border-collapse:collapse}th{background:#3a9c41;color:#fff}th,td{border:1px solid #ddd;padding:10px}tr:nth-child(even){background:#f8f8f8}</style><style>body{font-family:Arial;padding:20px}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ccc;padding:8px;text-align:left}</style></head><body><div class='cab'><img src='/logo-viva-esperanca.png'><div><div class='titulo'>Projeto Viva Esperança</div><div>Relatório de Matrículas</div></div></div>${html}</body></html>`);w.document.close();w.print()}
+}
  const contagem=useMemo(()=>({ativos:alunosAtivos.length,matriculados:alunos.filter(a=>statusDoAluno(a)==='Matriculado').length,inativos:alunos.filter(a=>statusDoAluno(a)==='Inativo').length,excluidos:alunos.filter(a=>statusDoAluno(a)==='Excluído').length}),[alunos,matriculas])
  if(!session)return <main className="login-page premium-login-page"><section className="login-hero-panel"><div className="login-hero-content"><img src="/logo-viva-esperanca.png" alt="Logo Viva Esperança"/><h2>Projeto Viva Esperança</h2><p>Gestão simples, acolhedora e organizada para matrículas do projeto social.</p></div></section><form className="card login-card premium-login-card" onSubmit={login}><h1>Bem-vindo de volta</h1>
         <p>Acesse para gerenciar suas matrículas</p><input placeholder="E-mail" value={email} onChange={e=>setEmail(e.target.value)} type="email" required/><input placeholder="Senha" value={senha} onChange={e=>setSenha(e.target.value)} type="password" required/>{erro&&<div className="erro">{erro}</div>}<button>Entrar</button></form></main>
