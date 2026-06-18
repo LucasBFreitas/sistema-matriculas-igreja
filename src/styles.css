@@ -1198,3 +1198,9 @@ input:disabled{opacity:.65;cursor:not-allowed}
 #relatorio-impressao h1{
   margin-top:34px;
 }
+
+
+/* ===== V12.2.0 - PERÍODOS LETIVOS ===== */
+.item strong + small{
+  margin-top:6px;
+}

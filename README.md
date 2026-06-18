@@ -1,20 +1,25 @@
-# Sistema de Matrículas - V12.1.0
+# Sistema de Matrículas - V12.2.0
 
-## Filtros de relatório
+## Períodos letivos nas matrículas
 
-Correções implementadas:
+Implementações:
 
-- Alunos excluídos não aparecem mais na lista de alunos matriculados.
-- Alunos inativos não aparecem como matriculados.
-- Matrículas canceladas não entram no relatório de matriculados.
-- Adicionados filtros:
-  - Alunos matriculados
-  - Alunos ativos
-  - Alunos sem matrícula
-  - Alunos inativos
-  - Alunos excluídos
-  - Relatório por turma
+- Nova aba **Períodos**.
+- Cadastro de período letivo, exemplo:
+  - 2026.1
+  - 2026.2
+- Campo **Período letivo** na inscrição.
+- Matrícula passa a ser vinculada a:
+  - Aluno
+  - Turma
+  - Período letivo
+- Controle de vagas passa a considerar turma + período.
+- A mesma turma pode ter vagas independentes em 2026.1 e 2026.2.
+- Listagem de inscrições mostra o período.
+- Relatórios passam a mostrar o período.
 
-## Banco de dados
+## SQL obrigatório
 
-Não precisa rodar SQL novo.
+Antes de subir esta versão, rode:
+
+`supabase/atualizacao_v12_2_0.sql`
