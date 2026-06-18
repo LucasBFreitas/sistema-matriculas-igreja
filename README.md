@@ -1,23 +1,16 @@
-# Sistema de Matrículas - Versão 12.0.9
+# Sistema de Matrículas - Versão 12.0.9 FIX
 
-## V12.0.9 – Novos campos no cadastro de alunos
+## Correção
 
-Alterações implementadas:
+- Corrigido erro de build no `main.jsx`.
+- Campo Sexo no cadastro de alunos.
+- Campo Possui deficiência.
+- Campo Qual deficiência.
+- Campo Qual deficiência fica desabilitado quando "Possui deficiência" estiver como Não.
 
-- Campo Sexo:
-  - Masculino
-  - Feminino
+## SQL necessário
 
-- Campo Possui deficiência:
-  - Sim
-  - Não
-
-- Campo Qual deficiência:
-  - Aparece quando o aluno possui deficiência.
-
-## Banco de dados
-
-Antes de subir esta versão, rode no Supabase:
+Rode uma única vez:
 
 ```sql
 alter table alunos add column if not exists sexo text;

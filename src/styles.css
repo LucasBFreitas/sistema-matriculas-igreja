@@ -1201,3 +1201,10 @@ input[readonly]{
 .card select{
   min-height:44px;
 }
+
+
+/* ===== V12.0.9 FIX - CAMPOS ALUNO ===== */
+input:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
