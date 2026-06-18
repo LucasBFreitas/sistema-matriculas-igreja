@@ -55,3 +55,17 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo se a V12.2.0 já foi aplicada.
+
+
+## V12.2.5 – Correção da rotina Reativar
+
+Correção implementada:
+
+- A rotina **Reativar** não tenta mais salvar o status `reativada`.
+- O banco não aceitava esse valor por causa da regra `matriculas_status_check`.
+- Agora, ao reativar, o sistema salva o status como `renovada`, que já é aceito pela estrutura atual.
+- A rotina **Renovar** não foi alterada.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.

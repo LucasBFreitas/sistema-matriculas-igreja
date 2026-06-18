@@ -70,7 +70,7 @@ async function confirmarRenovacao(e){
   const {error}=await supabase.from('matriculas').update({
     turma_id:turmaId,
     periodo_letivo_id:renovacaoForm.periodo_letivo_id,
-    status:renovacaoModal.status==='cancelada'?'reativada':'renovada',
+    status:'renovada',
     data_renovacao:new Date().toISOString().slice(0,10)
   }).eq('id',renovacaoModal.id)
   if(error)return falhar(error.message)
