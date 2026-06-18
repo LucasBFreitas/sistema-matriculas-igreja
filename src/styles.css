@@ -1209,3 +1209,76 @@ input:disabled{opacity:.65;cursor:not-allowed}
 /* ===== V12.2.1 - LIMPEZA DO FORMULÁRIO DE TURMAS ===== */
 /* Campos de período da turma foram removidos da interface.
    A definição de período agora deve ser feita exclusivamente na aba Períodos. */
+
+
+/* ===== V12.2.4 - MODAL RENOVAÇÃO ===== */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.45);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:24px;
+}
+
+.modal-card{
+  width:min(560px,100%);
+  background:#fff;
+  border:1px solid #DDE7E0;
+  border-radius:28px;
+  box-shadow:0 24px 70px rgba(15,23,42,.25);
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.modal-card h2{
+  margin:0;
+  color:#142235;
+  font-size:26px;
+}
+
+.modal-subtitle{
+  margin:0 0 8px;
+  color:#607080;
+  font-weight:700;
+}
+
+.check-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  color:#142235;
+  background:#F0FDF4;
+  border:1px solid #BBF7D0;
+  border-radius:16px;
+  padding:12px 14px;
+}
+
+.check-row input{
+  width:18px!important;
+  height:18px!important;
+  margin:0!important;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:8px;
+}
+
+@media(max-width:700px){
+  .modal-card{
+    padding:20px;
+    border-radius:22px;
+  }
+  .modal-actions{
+    flex-direction:column;
+  }
+}

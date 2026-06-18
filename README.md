@@ -37,3 +37,21 @@ Correções:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.2.4 – Renovação e Reativação com Período
+
+Implementado:
+
+- Ao clicar em **Renovar**, abre um pop-up.
+- Ao clicar em **Reativar**, abre o mesmo pop-up.
+- O usuário escolhe para qual **Período letivo** a inscrição será enviada.
+- O usuário pode manter o mesmo curso/turma.
+- Se não quiser manter, pode escolher outra turma.
+- O sistema valida vagas da turma no período escolhido.
+- O botão Reativar continua aparecendo para inscrições canceladas.
+- O botão Cancelar inscrição não aparece quando a inscrição já está cancelada.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo se a V12.2.0 já foi aplicada.
