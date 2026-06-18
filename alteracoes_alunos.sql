@@ -1,0 +1,1215 @@
+
+:root{
+  font-family:Inter, Arial, Helvetica, sans-serif;
+  color:#142235;
+  background:linear-gradient(135deg,#e7f7ff 0%,#ecf9ef 100%);
+  --azul:#24a8e8;
+  --azul-escuro:#167fbe;
+  --verde:#65b82f;
+  --verde-escuro:#3d8b1f;
+  --amarelo:#ffd84d;
+  --texto:#142235;
+  --muted:#607080;
+  --card:#ffffff;
+  --borda:#cfe3dc;
+  --input:#f1fbf6;
+  --sombra:0 18px 45px rgba(18,52,75,.09);
+}
+*{box-sizing:border-box}
+body{margin:0}
+main{max-width:1280px;margin:auto;padding:0 18px 26px}
+
+/* LOGIN */
+.login-page{
+  max-width:none;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%);
+}
+.login-page::before{
+  content:"";
+  width:116px;
+  height:116px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:5px solid rgba(255,255,255,.9);
+  margin-bottom:14px;
+}
+.login-page::after{
+  content:"Projeto Viva Esperança";
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+}
+.login-card{
+  width:100%;
+  max-width:420px;
+}
+.modern-login{
+  text-align:left;
+  padding:38px 40px;
+  border-radius:18px;
+}
+.login-logo{display:none}
+.modern-login h1{
+  margin:0 0 4px;
+  font-size:24px;
+  color:#142235;
+  letter-spacing:-.02em;
+}
+.modern-login p{
+  margin:0 0 28px;
+  color:#607080;
+}
+.login-footer{
+  text-align:center;
+  margin-top:24px;
+  font-size:13px;
+  color:#607080;
+}
+.login-footer strong{color:#3d8b1f}
+
+/* APP HEADER */
+.app-header{
+  margin:14px auto 0;
+  min-height:70px;
+  background:#fff;
+  border-bottom:1px solid #cfe3dc;
+  border-radius:0;
+  padding:14px 26px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 18px rgba(20,50,74,.04);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand-logo{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid #dbeee5;
+}
+.brand h1{
+  margin:0;
+  font-size:18px;
+  color:#24a8e8;
+  letter-spacing:-.02em;
+}
+.brand p{
+  margin:1px 0 0;
+  color:#607080;
+  font-size:12px;
+}
+.logout-btn{
+  background:#fff;
+  color:#405365;
+  border:1px solid #cfe0e7;
+  box-shadow:none;
+}
+.logout-btn:hover{background:#f6fbff}
+
+/* NAV */
+.tabs{
+  display:flex;
+  gap:0;
+  flex-wrap:wrap;
+  margin:0 0 30px;
+  background:#fff;
+  border-bottom:1px solid #cfe3dc;
+  padding:0 18px;
+}
+.tabs button{
+  border:none;
+  background:transparent;
+  color:#405365;
+  padding:15px 18px;
+  border-radius:0;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:none;
+  border-bottom:3px solid transparent;
+}
+.tabs button:hover{
+  color:#24a8e8;
+  background:#f6fbff;
+  transform:none;
+}
+.tabs button.active{
+  color:#24a8e8;
+  background:transparent;
+  border-bottom-color:#24a8e8;
+  box-shadow:none;
+}
+
+/* TITLES */
+.page-title{
+  margin:0 0 22px;
+}
+.page-title h2{
+  font-size:24px;
+  margin:0;
+  color:#142235;
+}
+.page-title p{
+  margin:4px 0 0;
+  color:#607080;
+}
+
+/* BUTTONS */
+button{
+  border:none;
+  background:linear-gradient(135deg,#32b5eb,#167fbe);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(36,168,232,.18);
+  transition:.16s ease;
+}
+button:hover{transform:translateY(-1px)}
+button.secondary{background:#405365}
+button.danger{background:#dc2626;color:#fff}
+button.warning{background:#d99000;color:#fff}
+button.small{
+  padding:7px 11px;
+  font-size:12px;
+  border-radius:8px;
+  box-shadow:none;
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  border:1px solid #cfe3dc;
+  border-radius:12px;
+  padding:28px;
+  box-shadow:0 16px 34px rgba(20,50,74,.06);
+}
+.grid{display:grid;gap:26px}
+.two{grid-template-columns:1fr 1fr}
+.cards{grid-template-columns:repeat(4,1fr)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-title{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.card h2{
+  margin:0 0 22px;
+  font-size:20px;
+  color:#142235;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block;
+}
+.dot.blue{background:#24a8e8}
+.dot.green{background:#65b82f}
+h3{
+  color:#142235;
+  font-size:20px;
+  margin:24px 0 14px;
+}
+
+/* FORMS */
+input,select,textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #cfe0d6;
+  border-radius:8px;
+  margin-bottom:0;
+  font-size:14px;
+  background:#f1fbf6;
+  color:#142235;
+  outline:none;
+  transition:.16s ease;
+}
+input::placeholder,textarea::placeholder{color:#7a8793}
+input:focus,select:focus,textarea:focus{
+  border-color:#24a8e8;
+  box-shadow:0 0 0 3px rgba(36,168,232,.12);
+  background:#fff;
+}
+textarea{
+  min-height:86px;
+  margin-top:12px;
+}
+
+/* ALERTS */
+.erro{
+  background:#fee2e2;
+  color:#991b1b;
+  padding:11px;
+  border-radius:10px;
+  margin:8px 0;
+  border:1px solid #fecaca;
+}
+.ok{
+  background:#dcfce7;
+  color:#166534;
+  padding:11px;
+  border-radius:10px;
+  margin:8px 0;
+  border:1px solid #bbf7d0;
+}
+.toolbar{
+  display:grid;
+  grid-template-columns:1fr 140px;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+/* LIST */
+.item{
+  border:1px solid #d5e7de;
+  border-radius:10px;
+  padding:15px 18px;
+  margin-bottom:10px;
+  background:#f7fffb;
+  transition:.16s ease;
+}
+.item:hover{
+  border-color:rgba(36,168,232,.35);
+  box-shadow:0 8px 18px rgba(20,50,74,.06);
+}
+.item.inactive{background:#fafafa;border-style:dashed}
+.item strong,.item span,.item small{display:block}
+.item strong{
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.item small{
+  color:#607080;
+  margin-top:5px;
+  line-height:1.35;
+}
+.actions{
+  margin-top:12px;
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+/* STATUS */
+.status{
+  display:inline-flex!important;
+  align-items:center;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.matriculado{background:#DCFCE7;color:#166534}
+.sem-matricula{background:#FEF3C7;color:#92400E}
+.nao-matriculado{background:#FEF3C7;color:#92400E}
+.inativo{background:#FEE2E2;color:#991B1B}
+.excluido{background:#DC2626;color:#FFFFFF}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin-top:12px;
+  overflow:hidden;
+  border-radius:10px;
+  border:1px solid #d5e7de;
+}
+th,td{text-align:left;border-bottom:1px solid #e5eef5;padding:10px}
+th{background:#edf9f4;color:#167fbe}
+tr:last-child td{border-bottom:none}
+
+@media(max-width:900px){
+  main{padding:0 10px 20px}
+  .two,.cards,.form-grid,.toolbar{grid-template-columns:1fr}
+  .app-header{border-radius:0;padding:12px}
+  .tabs{padding:0 8px;overflow:auto;flex-wrap:nowrap}
+  .tabs button{white-space:nowrap}
+  .card{padding:18px}
+  table{font-size:13px}
+}
+
+
+/* ===== AJUSTES V8 - LOGIN E CABEÇALHO ===== */
+
+.login-page{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%) !important;
+}
+
+.login-page::before{
+  content:"";
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff !important;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:4px solid rgba(255,255,255,.95) !important;
+  margin-bottom:14px;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+  font-size:15px;
+}
+
+.modern-login{
+  text-align:left;
+  padding:38px 40px !important;
+  border-radius:18px !important;
+}
+
+.modern-login .login-logo{
+  display:none !important;
+}
+
+.modern-login h1{
+  margin:0 0 6px !important;
+  font-size:26px !important;
+  color:#142235 !important;
+  letter-spacing:-.02em;
+}
+
+.modern-login p{
+  margin:0 0 28px !important;
+  color:#607080 !important;
+  line-height:1.35;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+.modern-login button{
+  width:100%;
+  margin-top:8px;
+  padding:13px 14px;
+}
+
+.app-header{
+  margin:0 auto !important;
+  min-height:72px !important;
+  background:#ffffff !important;
+  border-bottom:1px solid #cfe3dc !important;
+  border-radius:0 !important;
+  padding:14px 24px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  box-shadow:0 4px 18px rgba(20,50,74,.04) !important;
+}
+
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.brand-logo{
+  width:42px !important;
+  height:42px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:1px solid #dbeee5 !important;
+  background:#fff !important;
+}
+
+.brand h1{
+  margin:0 !important;
+  font-size:20px !important;
+  color:#24a8e8 !important;
+  letter-spacing:-.02em;
+  font-weight:900;
+}
+
+.brand p{
+  display:none !important;
+}
+
+.logout-btn{
+  margin-left:auto !important;
+  background:#ffffff !important;
+  color:#405365 !important;
+  border:1px solid #cfe0e7 !important;
+  box-shadow:none !important;
+  padding:10px 15px !important;
+}
+
+.logout-btn:hover{
+  background:#f6fbff !important;
+}
+
+
+
+
+/* ===== V9 - CABEÇALHO FIXO E LOGIN CORRIGIDOS ===== */
+
+.login-page{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  background:
+    radial-gradient(circle at top center,rgba(36,168,232,.20),transparent 36%),
+    linear-gradient(135deg,#e6f8ff 0%,#eaf8e8 100%) !important;
+}
+
+.login-page::before{
+  content:"";
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  background:url('/logo-viva-esperanca.jpeg') center/cover no-repeat,#fff !important;
+  box-shadow:0 12px 35px rgba(101,184,47,.18);
+  border:4px solid rgba(255,255,255,.95) !important;
+  margin-bottom:14px;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+  margin-bottom:30px;
+  margin-top:-6px;
+  color:#607080;
+  letter-spacing:.02em;
+  font-size:15px;
+}
+
+.modern-login .login-logo{
+  display:none !important;
+}
+
+.modern-login h1{
+  margin:0 0 6px !important;
+  font-size:26px !important;
+  color:#142235 !important;
+  letter-spacing:-.02em;
+}
+
+.modern-login p{
+  margin:0 0 28px !important;
+  color:#607080 !important;
+  line-height:1.35;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+.modern-login button{
+  width:100%;
+  margin-top:8px;
+  padding:13px 14px;
+}
+
+/* Cabeçalho superior visível */
+.app-header-fixed{
+  width:100%;
+  min-height:74px;
+  background:#ffffff;
+  border-bottom:1px solid #cfe3dc;
+  padding:14px 24px;
+  display:flex !important;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  box-shadow:0 4px 18px rgba(20,50,74,.05);
+  margin:0 0 0 0;
+  position:relative;
+  z-index:10;
+}
+
+.brand-fixed{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo-fixed{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#fff;
+  border:1px solid #dbeee5;
+  flex:0 0 auto;
+}
+
+.brand-fixed h1{
+  margin:0;
+  font-size:22px;
+  font-weight:900;
+  color:#24a8e8;
+  letter-spacing:-.02em;
+}
+
+.logout-fixed{
+  margin-left:auto;
+  background:#ffffff !important;
+  color:#405365 !important;
+  border:1px solid #cfe0e7 !important;
+  box-shadow:none !important;
+  padding:10px 16px !important;
+  border-radius:10px !important;
+  font-weight:800;
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+}
+
+.logout-fixed:hover{
+  background:#f6fbff !important;
+}
+
+/* Garante que o menu venha abaixo do cabeçalho */
+.tabs{
+  margin-top:0 !important;
+}
+
+/* Esconde apenas headers antigos se ainda sobrarem duplicados */
+header.app-header,
+header.hero,
+header.topbar{
+  display:none !important;
+}
+
+@media(max-width:900px){
+  .app-header-fixed{
+    padding:12px;
+  }
+  .brand-fixed h1{
+    font-size:18px;
+  }
+  .brand-logo-fixed{
+    width:40px;
+    height:40px;
+  }
+}
+
+
+/* ===== V10 - LOGO LIMPA E WORDMARK DA MARCA ===== */
+
+.login-page::before{
+  background:url('/logo-viva-esperanca.png') center/cover no-repeat,#fff !important;
+  border:4px solid rgba(255,255,255,.95) !important;
+}
+
+.login-page::after{
+  content:"Projeto Viva Esperança" !important;
+}
+
+.brand-logo-fixed{
+  width:48px !important;
+  height:48px !important;
+  object-fit:cover !important;
+  border-radius:50% !important;
+  border:1px solid #dbeee5 !important;
+  background:#fff !important;
+  flex:0 0 auto;
+}
+
+.brand-wordmark{
+  height:52px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.brand-fixed h1,
+.brand-fixed p{
+  display:none !important;
+}
+
+.app-header-fixed{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  min-height:74px !important;
+}
+
+.brand-fixed{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.logout-fixed{
+  margin-left:auto !important;
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+.modern-login input{
+  margin-bottom:12px !important;
+}
+
+@media(max-width:700px){
+  .brand-wordmark{
+    height:40px;
+  }
+  .brand-logo-fixed{
+    width:42px !important;
+    height:42px !important;
+  }
+}
+
+/* ===== V11 - AJUSTES DE LOGIN, VAGAS E PERÍODOS ===== */
+.modern-login h1{margin:0 0 6px !important;}
+.modern-login p{display:block !important;margin:0 0 28px !important;}
+.modern-login input[type="email"]{margin-bottom:14px !important;}
+.modern-login input[type="password"]{margin-bottom:14px !important;}
+.card form input,.card form select{margin-bottom:10px;}
+
+/* ===== V11.1 - VAGAS E SEMESTRE ===== */
+.lotada{display:inline-block!important;background:#FEE2E2;color:#991B1B!important;border-radius:999px;padding:4px 9px;font-weight:900;margin-top:8px}
+.field-label{display:block;font-size:12px;font-weight:800;color:#607080;margin:2px 0 4px}
+select option:disabled{color:#991B1B}
+
+
+/* ===== V12 UI PREMIUM ===== */
+:root{
+ --ve-green:#2E7D32;
+ --ve-light:#E8F5E9;
+ --ve-bg:#F8FAFC;
+ --ve-text:#1F2937;
+}
+body{background:var(--ve-bg)!important;color:var(--ve-text)!important}
+.card{
+ border:none!important;
+ border-radius:20px!important;
+ box-shadow:0 10px 30px rgba(0,0,0,.08)!important;
+}
+button{
+ background:var(--ve-green)!important;
+ color:#fff!important;
+ border:none!important;
+ border-radius:14px!important;
+ font-weight:700!important;
+}
+input,select,textarea{
+ border-radius:14px!important;
+ border:1px solid #d9e2e8!important;
+}
+
+
+/* ===== V12.2 UI PREMIUM - PROJETO SOCIAL MODERNO ===== */
+
+:root{
+  --premium-green:#2E7D32;
+  --premium-green-2:#43A047;
+  --premium-green-soft:#E8F5E9;
+  --premium-bg:#F5F8F6;
+  --premium-card:#FFFFFF;
+  --premium-text:#1F2937;
+  --premium-muted:#6B7280;
+  --premium-border:#DDE7E0;
+  --premium-shadow:0 18px 45px rgba(31,41,55,.08);
+}
+
+/* Login premium em duas colunas */
+.premium-login-page{
+  max-width:none!important;
+  min-height:100vh!important;
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr!important;
+  align-items:center!important;
+  gap:0!important;
+  padding:0!important;
+  background:linear-gradient(135deg,#F7FBF8 0%,#E8F5E9 100%)!important;
+}
+
+.premium-login-page::before,
+.premium-login-page::after{
+  display:none!important;
+}
+
+.login-hero-panel{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px;
+  background:
+    linear-gradient(135deg,rgba(46,125,50,.92),rgba(67,160,71,.82)),
+    radial-gradient(circle at 30% 20%,rgba(255,255,255,.28),transparent 32%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.login-hero-panel::after{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  right:-110px;
+  bottom:-120px;
+  border-radius:50%;
+  background:rgba(255,255,255,.13);
+}
+
+.login-hero-content{
+  position:relative;
+  z-index:1;
+  max-width:460px;
+  text-align:center;
+}
+
+.login-hero-content img{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  background:#fff;
+  border:6px solid rgba(255,255,255,.88);
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+  margin-bottom:24px;
+}
+
+.login-hero-content h2{
+  font-size:42px;
+  line-height:1.05;
+  margin:0 0 14px;
+  font-weight:900;
+}
+
+.login-hero-content p{
+  font-size:18px;
+  line-height:1.55;
+  margin:0;
+  opacity:.94;
+}
+
+.premium-login-card{
+  width:min(420px,calc(100% - 40px))!important;
+  margin:auto!important;
+  padding:42px!important;
+  border-radius:26px!important;
+  box-shadow:var(--premium-shadow)!important;
+  border:1px solid rgba(221,231,224,.8)!important;
+}
+
+.premium-login-card h1{
+  font-size:30px!important;
+  margin-bottom:8px!important;
+  color:var(--premium-text)!important;
+}
+
+.premium-login-card p{
+  color:var(--premium-muted)!important;
+  margin-bottom:28px!important;
+}
+
+.premium-login-card input{
+  height:48px!important;
+  border-radius:14px!important;
+  background:#F8FAFC!important;
+  margin-bottom:14px!important;
+}
+
+.premium-login-card button{
+  width:100%!important;
+  height:48px!important;
+  margin-top:6px!important;
+  background:linear-gradient(135deg,var(--premium-green),var(--premium-green-2))!important;
+  border-radius:14px!important;
+}
+
+/* Estrutura do app */
+.app-shell{
+  max-width:none!important;
+  min-height:100vh;
+  padding:0!important;
+  background:var(--premium-bg)!important;
+}
+
+/* Cabeçalho */
+.premium-header,
+.app-header-fixed{
+  position:sticky!important;
+  top:0!important;
+  z-index:30!important;
+  min-height:76px!important;
+  padding:14px 28px!important;
+  background:rgba(255,255,255,.92)!important;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--premium-border)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  box-shadow:0 8px 26px rgba(31,41,55,.05)!important;
+}
+
+.brand-fixed{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+}
+
+.brand-logo-fixed{
+  width:50px!important;
+  height:50px!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  background:#fff!important;
+  border:1px solid var(--premium-border)!important;
+}
+
+.brand-wordmark{
+  height:50px!important;
+  object-fit:contain!important;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.admin-pill{
+  padding:9px 13px;
+  border-radius:999px;
+  background:var(--premium-green-soft);
+  color:var(--premium-green);
+  font-size:13px;
+  font-weight:800;
+}
+
+.logout-fixed{
+  background:#fff!important;
+  color:var(--premium-text)!important;
+  border:1px solid var(--premium-border)!important;
+  box-shadow:none!important;
+  padding:10px 16px!important;
+  border-radius:12px!important;
+}
+
+/* Navegação estilo sidebar horizontal premium */
+.tabs{
+  margin:0!important;
+  padding:16px 28px!important;
+  display:flex!important;
+  gap:10px!important;
+  background:var(--premium-bg)!important;
+  border-bottom:0!important;
+  overflow-x:auto;
+}
+
+.tabs button{
+  flex:0 0 auto;
+  border:1px solid var(--premium-border)!important;
+  background:#fff!important;
+  color:var(--premium-text)!important;
+  padding:12px 16px!important;
+  border-radius:16px!important;
+  font-weight:850!important;
+  box-shadow:0 8px 20px rgba(31,41,55,.04)!important;
+}
+
+.tabs button:hover{
+  transform:translateY(-1px)!important;
+  border-color:rgba(46,125,50,.35)!important;
+}
+
+.tabs button.active{
+  background:linear-gradient(135deg,var(--premium-green),var(--premium-green-2))!important;
+  color:#fff!important;
+  border-color:transparent!important;
+}
+
+/* Conteúdo */
+.app-shell > .erro,
+.app-shell > .ok,
+.loading-premium,
+.app-shell > section,
+.app-shell > .grid,
+.app-shell > .card{
+  margin-left:28px!important;
+  margin-right:28px!important;
+}
+
+.grid{
+  gap:20px!important;
+}
+
+.cards{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+
+.cards .card{
+  min-height:140px;
+  position:relative;
+  overflow:hidden;
+  border-radius:24px!important;
+  background:#fff!important;
+  border:1px solid var(--premium-border)!important;
+  box-shadow:var(--premium-shadow)!important;
+}
+
+.cards .card::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  right:-36px;
+  top:-36px;
+  border-radius:50%;
+  background:var(--premium-green-soft);
+}
+
+.cards .card h2{
+  font-size:38px!important;
+  margin:0 0 4px!important;
+  color:var(--premium-green)!important;
+}
+
+.cards .card p{
+  color:var(--premium-muted)!important;
+  font-weight:800;
+}
+
+.card{
+  border-radius:24px!important;
+  border:1px solid var(--premium-border)!important;
+  box-shadow:var(--premium-shadow)!important;
+  background:#fff!important;
+}
+
+.card h2{
+  color:var(--premium-text)!important;
+  font-weight:900!important;
+}
+
+input,select,textarea{
+  border-radius:14px!important;
+  background:#F8FAFC!important;
+  border:1px solid #DDE7E0!important;
+  min-height:44px;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:var(--premium-green)!important;
+  box-shadow:0 0 0 4px rgba(46,125,50,.12)!important;
+  background:#fff!important;
+}
+
+button{
+  background:linear-gradient(135deg,var(--premium-green),var(--premium-green-2))!important;
+  border-radius:14px!important;
+  box-shadow:0 10px 22px rgba(46,125,50,.18)!important;
+}
+
+button.secondary{
+  background:#374151!important;
+}
+
+button.danger{
+  background:linear-gradient(135deg,#EF4444,#B91C1C)!important;
+}
+
+button.warning{
+  background:linear-gradient(135deg,#F59E0B,#B45309)!important;
+}
+
+.item{
+  border-radius:18px!important;
+  border:1px solid var(--premium-border)!important;
+  background:#fff!important;
+  padding:16px!important;
+  box-shadow:0 8px 18px rgba(31,41,55,.04)!important;
+}
+
+.item:hover{
+  box-shadow:0 16px 30px rgba(31,41,55,.08)!important;
+  transform:translateY(-1px);
+}
+
+.status{
+  border-radius:999px!important;
+  padding:5px 10px!important;
+}
+
+table{
+  border-radius:18px!important;
+  overflow:hidden;
+  border:1px solid var(--premium-border)!important;
+}
+
+th{
+  background:var(--premium-green-soft)!important;
+  color:var(--premium-green)!important;
+  font-weight:900!important;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .premium-login-page{
+    grid-template-columns:1fr!important;
+  }
+  .login-hero-panel{
+    min-height:260px!important;
+    padding:30px 20px!important;
+  }
+  .login-hero-content img{
+    width:104px;
+    height:104px;
+    margin-bottom:12px;
+  }
+  .login-hero-content h2{
+    font-size:28px;
+  }
+  .login-hero-content p{
+    font-size:15px;
+  }
+  .premium-header,
+  .app-header-fixed{
+    padding:12px 14px!important;
+  }
+  .brand-wordmark{
+    height:38px!important;
+  }
+  .admin-pill{
+    display:none;
+  }
+  .tabs{
+    padding:12px 14px!important;
+  }
+  .app-shell > .erro,
+  .app-shell > .ok,
+  .loading-premium,
+  .app-shell > section,
+  .app-shell > .grid,
+  .app-shell > .card{
+    margin-left:14px!important;
+    margin-right:14px!important;
+  }
+  .cards{
+    grid-template-columns:1fr!important;
+  }
+}
+
+
+/* ==================================================
+   V12.0.1 - PADRONIZAÇÃO DE FORMULÁRIOS
+   Mantém todos os campos com espaçamento uniforme.
+================================================== */
+
+.card form,
+form.card,
+form.form-grid,
+.card.form-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:16px !important;
+}
+
+.form-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:16px !important;
+}
+
+.card input,
+.card select,
+.card textarea,
+form.card input,
+form.card select,
+form.card textarea{
+    margin-bottom:0 !important;
+}
+
+.card form button,
+form.card button,
+.form-grid button{
+    margin-top:20px !important;
+    align-self:flex-start;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.card .actions button,
+.actions button{
+    margin-top:0 !important;
+}
+
+.toolbar input,
+.toolbar select{
+    margin-bottom:0 !important;
+}
+
+@media(max-width:768px){
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* ===== V12.0.2 - RELATÓRIOS COM TURMAS LOTADAS ===== */
+/* Turmas lotadas continuam bloqueadas apenas no cadastro de inscrições.
+   Nos relatórios elas devem aparecer normalmente para consulta/impressão. */
+
+/* ===== V12.0.9 SAFE - CAMPOS ALUNO ===== */
+input[readonly]{background:#F0FDF4!important;color:#166534!important;font-weight:800}
+input:disabled{opacity:.65;cursor:not-allowed}
+.card select{min-height:44px}
+
+
+/* ===== V12.1.0 - FILTROS DE RELATÓRIO ===== */
+#relatorio-impressao h1{
+  margin-top:34px;
+}
+
+
+/* ===== V12.2.0 - PERÍODOS LETIVOS ===== */
+.item strong + small{
+  margin-top:6px;
+}
+
+
+/* ===== V12.2.1 - LIMPEZA DO FORMULÁRIO DE TURMAS ===== */
+/* Campos de período da turma foram removidos da interface.
+   A definição de período agora deve ser feita exclusivamente na aba Períodos. */
+
+
+/* ===== V12.2.2 - LIMPEZA DEFINITIVA DE TURMAS ===== */
+/* Campos antigos de período da tela de Turmas removidos da interface. */
