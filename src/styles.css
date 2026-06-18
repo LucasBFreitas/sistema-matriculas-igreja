@@ -1195,3 +1195,9 @@ input[readonly]{
   color:#166534!important;
   font-weight:800;
 }
+
+
+/* ===== V12.0.9 - CAMPOS ALUNO ===== */
+.card select{
+  min-height:44px;
+}

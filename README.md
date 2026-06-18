@@ -1,16 +1,26 @@
-# Sistema de Matrículas - V12.0.8 Fix
+# Sistema de Matrículas - Versão 12.0.9
 
-## Zona automática no cadastro de alunos
+## V12.0.9 – Novos campos no cadastro de alunos
 
-- Adiciona campo Zona no cadastro de alunos.
-- Define automaticamente a Zona conforme o bairro.
-- Se o bairro não estiver na lista, usa a Cidade como Zona.
-- Inclui correção de build do main.jsx.
+Alterações implementadas:
 
-## SQL necessário
+- Campo Sexo:
+  - Masculino
+  - Feminino
 
-Rode uma única vez no Supabase:
+- Campo Possui deficiência:
+  - Sim
+  - Não
+
+- Campo Qual deficiência:
+  - Aparece quando o aluno possui deficiência.
+
+## Banco de dados
+
+Antes de subir esta versão, rode no Supabase:
 
 ```sql
-alter table alunos add column if not exists zona text;
+alter table alunos add column if not exists sexo text;
+alter table alunos add column if not exists possui_deficiencia text default 'Não';
+alter table alunos add column if not exists qual_deficiencia text;
 ```
