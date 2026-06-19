@@ -104,3 +104,22 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.2.8 – Restauração do Dashboard Inteligente
+
+Correção implementada:
+
+- Restaurado o layout do **Dashboard Inteligente**.
+- Restaurado card de visão gerencial com ocupação geral.
+- Restaurados cards modernos:
+  - Alunos ativos
+  - Matrículas ativas
+  - Turmas cadastradas
+  - Vagas disponíveis
+- Restaurada seção **Ocupação das turmas**.
+- Restaurada seção **Indicadores de vagas**.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
