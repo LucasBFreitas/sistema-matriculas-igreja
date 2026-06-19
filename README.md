@@ -318,3 +318,20 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.4.2 – Modal moderno para impressão de relatório
+
+Implementado:
+
+- Removido o prompt padrão do navegador ao imprimir relatório.
+- Criado pop-up moderno no estilo do sistema.
+- Opções:
+  - Relatório Simplificado
+  - Relatório Institucional
+- Visual alinhado com as cores e identidade do sistema.
+- Botão cancelar dentro do modal.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
