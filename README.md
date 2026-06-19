@@ -144,3 +144,25 @@ Implementado:
 SQL obrigatório:
 
 Rode `supabase/atualizacao_v12_3_0.sql` no Supabase antes de subir a versão.
+
+
+## V12.3.1 – Histórico de Listas de Presença
+
+Implementado:
+
+- As listas de presença salvas agora ficam visíveis na aba **Presenças**.
+- Cada lista mostra:
+  - Turma
+  - Período
+  - Data
+  - Total de alunos
+  - Presentes
+  - Faltas
+- Botão **Abrir / Editar** para carregar uma lista salva.
+- Botão **Excluir lista** para remover uma lista de presença.
+- Ao abrir uma lista, a chamada volta para edição.
+- Ao salvar uma lista aberta, ela é atualizada.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
