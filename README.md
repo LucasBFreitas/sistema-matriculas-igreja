@@ -88,3 +88,19 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.2.7 – Ações por status do aluno
+
+Implementado:
+
+- Quando o aluno estiver **Inativo**, aparece apenas o botão **Ativar**.
+- Quando o aluno estiver **Excluído**, aparece apenas o botão **Ativar**.
+- Para alunos ativos, continuam disponíveis:
+  - Editar
+  - Inativar
+  - Excluir
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
