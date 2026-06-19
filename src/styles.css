@@ -1850,3 +1850,38 @@ body{
     overflow:visible;
   }
 }
+
+
+/* ===== V12.3.9 - CORREÇÃO VISUAL DA ROLAGEM ===== */
+
+/* Corrige sobreposição do título e busca dentro das listas */
+@media(min-width:901px){
+  section.grid.two > .card:nth-child(2){
+    max-height:calc(100vh - 190px)!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    padding-top:28px!important;
+  }
+
+  section.grid.two > .card:nth-child(2) > h2:first-child,
+  section.grid.two > .card:nth-child(2) > .form-title:first-child,
+  section.grid.two > .card:nth-child(2) .search-row{
+    position:static!important;
+    top:auto!important;
+    z-index:auto!important;
+    background:transparent!important;
+    padding-bottom:0!important;
+  }
+
+  section.grid.two > .card:nth-child(2) .search-row{
+    margin:18px 0!important;
+  }
+}
+
+/* Em telas menores, volta ao comportamento natural */
+@media(max-width:900px){
+  section.grid.two > .card:nth-child(2){
+    max-height:none!important;
+    overflow:visible!important;
+  }
+}

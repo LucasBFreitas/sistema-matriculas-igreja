@@ -276,3 +276,17 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.9 – Correção visual da rolagem
+
+Correção implementada:
+
+- Corrigida a sobreposição do título e do campo de busca nas listas.
+- Mantida a rolagem interna no lado direito.
+- Removido o comportamento fixo/sticky do título e da busca.
+- A lista volta a aparecer organizada visualmente.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
