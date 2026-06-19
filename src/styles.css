@@ -1629,3 +1629,61 @@ input:disabled{opacity:.65;cursor:not-allowed}
   background:#FEE2E2;
   border:1px solid #FCA5A5;
 }
+
+
+/* ===== V12.3.4 - TOAST DE MENSAGENS ===== */
+.toast-container{
+  position:fixed;
+  top:92px;
+  right:24px;
+  z-index:10000;
+  max-width:min(420px, calc(100vw - 32px));
+  pointer-events:none;
+}
+
+.toast{
+  pointer-events:auto;
+  padding:14px 18px;
+  border-radius:16px;
+  font-weight:800;
+  box-shadow:0 18px 45px rgba(15,23,42,.18);
+  border:1px solid transparent;
+  animation:toastIn .28s ease both;
+}
+
+.toast.success{
+  color:#166534;
+  background:#DCFCE7;
+  border-color:#86EFAC;
+}
+
+.toast.error{
+  color:#991B1B;
+  background:#FEE2E2;
+  border-color:#FCA5A5;
+}
+
+.alert.success,
+.alert.error{
+  display:none!important;
+}
+
+@keyframes toastIn{
+  from{
+    opacity:0;
+    transform:translateY(-10px) translateX(12px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) translateX(0);
+  }
+}
+
+@media(max-width:700px){
+  .toast-container{
+    top:82px;
+    left:16px;
+    right:16px;
+    max-width:none;
+  }
+}

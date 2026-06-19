@@ -31,6 +31,7 @@ function App(){
  const [buscaAluno,setBuscaAluno]=useState(''),[filtroAluno,setFiltroAluno]=useState('todos'),[buscaInscricao,setBuscaInscricao]=useState(''),[relatorioTurma,setRelatorioTurma]=useState('matriculados')
  useEffect(()=>{supabase.auth.getSession().then(({data})=>setSession(data.session)); const {data:l}=supabase.auth.onAuthStateChange((_e,s)=>setSession(s)); return()=>l.subscription.unsubscribe()},[])
  useEffect(()=>{if(session) carregarDados()},[session])
+ useEffect(()=>{if(!msg&&!erro)return;const toastAutoHide=setTimeout(()=>{setMsg('');setErro('')},3500);return()=>clearTimeout(toastAutoHide)},[msg,erro]);
  async function login(e){e.preventDefault();setErro('');const {error}=await supabase.auth.signInWithPassword({email,password:senha});if(error)setErro('E-mail ou senha inválidos.')}
  async function sair(){await supabase.auth.signOut()}
  async function carregarDados(){setLoading(true);const [al,cur,tur,prof,mat,per,pre]=await Promise.all([supabase.from('alunos').select('*, responsaveis(nome, cpf, telefone, email, endereco)').order('created_at',{ascending:false}),supabase.from('cursos').select('*').order('nome'),supabase.from('turmas').select('*, cursos(nome), professores(nome)').order('created_at',{ascending:false}),supabase.from('professores').select('*').order('nome'),supabase.from('matriculas').select('*, alunos(nome, ativo, excluido), turmas(nome, cursos(nome), professores(nome)), periodos_letivos(nome, data_inicio, data_fim)').order('created_at',{ascending:false}),supabase.from('periodos_letivos').select('*').order('nome',{ascending:false}),supabase.from('presencas').select('*')]); if(al.error||cur.error||tur.error||prof.error||mat.error||per.error||pre.error)setErro(al.error?.message||cur.error?.message||tur.error?.message||prof.error?.message||mat.error?.message||per.error?.message||pre.error?.message); else{setAlunos(al.data||[]);setCursos(cur.data||[]);setTurmas(tur.data||[]);setProfessores(prof.data||[]);setMatriculas(mat.data||[]);setPeriodosLetivos(per.data||[]);setPresencas(pre.data||[])} setLoading(false)}
@@ -215,7 +216,7 @@ async function confirmarRenovacao(e){
           <button className="logout-fixed" onClick={sair}>Sair</button>
         </div>
       </header><nav className="tabs">{abas.map(([id,n])=><button key={id} className={aba===id?'active':''} onClick={()=>setAba(id)}>{n}</button>)}</nav>{erro&&<div className="erro">{erro}</div>}{msg&&<div className="ok">{msg}</div>}{loading&&<p className="loading-premium">Atualizando dados...</p>}
- {aba==='painel'&&<section className="dashboard-inteligente">
+ {(msg||erro)&&<div className="toast-container"><div className={erro?'toast error':'toast success'}>{erro||msg}</div></div>}{aba==='painel'&&<section className="dashboard-inteligente">
   <div className="dashboard-hero card">
     <div>
       <span className="dashboard-kicker">Visão gerencial</span>

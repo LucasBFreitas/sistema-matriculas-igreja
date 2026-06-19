@@ -199,3 +199,17 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.4 – Mensagens em Toast
+
+Implementado:
+
+- Mensagens de sucesso e erro agora aparecem em formato **toast flutuante**.
+- O toast aparece no canto superior direito.
+- Some automaticamente após alguns segundos.
+- As mensagens não ocupam mais espaço no layout da página.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
