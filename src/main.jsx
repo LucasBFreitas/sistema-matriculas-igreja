@@ -113,7 +113,7 @@ async function confirmarRenovacao(e){
   setEditandoChamada(false)
   await atualizar('Lista de presença excluída.')
  }
- const alunosChamada=matriculas.filter(m=>m.status!=='cancelada'&&m.alunos&&!m.alunos.excluido&&m.alunos.ativo!==false&&m.turma_id===chamadaForm.turma_id&&m.periodo_letivo_id===chamadaForm.periodo_letivo_id)
+ const alunosChamada=matriculas.filter(m=>m.status!=='cancelada'&&m.alunos&&m.turma_id===chamadaForm.turma_id&&String(m.periodo_letivo_id||'')===String(chamadaForm.periodo_letivo_id||'')).sort((a,b)=>(a.alunos?.nome||'').localeCompare(b.alunos?.nome||''))
  function marcarPresenca(matriculaId,status){setChamada({...chamada,[matriculaId]:status})}
  function totalPresencasAluno(alunoId){return presencas.filter(p=>p.aluno_id===alunoId&&p.status==='presente').length}
  async function salvarChamada(e){

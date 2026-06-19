@@ -166,3 +166,17 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.2 – Correção da lista de chamada
+
+Correção implementada:
+
+- A aba **Presenças** agora lista corretamente todas as matrículas válidas da turma e período selecionados.
+- A chamada não oculta mais alunos indevidamente por causa de filtros de status do cadastro do aluno.
+- A lista da chamada agora é ordenada por nome do aluno.
+- Mantida a regra de não listar matrículas canceladas.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
