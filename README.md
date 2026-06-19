@@ -69,3 +69,22 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.2.6 – Busca em Inscrições
+
+Implementado:
+
+- Campo de pesquisa na aba **Inscrições**.
+- A busca filtra por:
+  - Nome do aluno
+  - Curso
+  - Turma
+  - Professor
+  - Período letivo
+  - Status da inscrição
+- Exibe mensagem quando nenhuma inscrição for encontrada.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.

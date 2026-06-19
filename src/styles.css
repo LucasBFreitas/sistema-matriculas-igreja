@@ -1282,3 +1282,15 @@ input:disabled{opacity:.65;cursor:not-allowed}
     flex-direction:column;
   }
 }
+
+
+/* ===== V12.2.6 - BUSCA EM INSCRIÇÕES ===== */
+.search-row{
+  display:flex;
+  gap:12px;
+  margin:18px 0;
+}
+
+.search-row input{
+  width:100%;
+}
