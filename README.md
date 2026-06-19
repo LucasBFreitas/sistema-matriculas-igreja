@@ -290,3 +290,17 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.4.0 – Data destacada nas listas de presença
+
+Implementado:
+
+- A data da chamada agora aparece destacada no canto superior direito do card.
+- A data aparece em formato brasileiro: DD/MM/AAAA.
+- Removida a data da linha secundária para deixar a leitura mais limpa.
+- As listas continuam ordenadas da mais recente para a mais antiga.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
