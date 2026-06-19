@@ -1564,3 +1564,68 @@ input:disabled{opacity:.65;cursor:not-allowed}
     margin:14px!important;
   }
 }
+
+
+/* ===== V12.3.3 - SELEÇÃO VISUAL DE PRESENÇA ===== */
+.chamada-item{
+  transition:.2s ease;
+}
+
+.chamada-item:has(.selected-presente){
+  border-color:#16A34A!important;
+  background:#F0FDF4!important;
+  box-shadow:0 0 0 3px rgba(22,163,74,.12), 0 12px 28px rgba(22,163,74,.12)!important;
+}
+
+.chamada-item:has(.selected-faltou){
+  border-color:#DC2626!important;
+  background:#FEF2F2!important;
+  box-shadow:0 0 0 3px rgba(220,38,38,.12), 0 12px 28px rgba(220,38,38,.12)!important;
+}
+
+.small.present,
+.small.danger{
+  opacity:.72;
+  transition:.18s ease;
+}
+
+.small.selected-presente{
+  opacity:1!important;
+  background:#16A34A!important;
+  color:#fff!important;
+  border:2px solid #15803D!important;
+  box-shadow:0 0 0 4px rgba(22,163,74,.20), 0 10px 22px rgba(22,163,74,.24)!important;
+  transform:scale(1.06);
+}
+
+.small.selected-faltou{
+  opacity:1!important;
+  background:#DC2626!important;
+  color:#fff!important;
+  border:2px solid #B91C1C!important;
+  box-shadow:0 0 0 4px rgba(220,38,38,.20), 0 10px 22px rgba(220,38,38,.24)!important;
+  transform:scale(1.06);
+}
+
+.status-chamada{
+  display:inline-flex;
+  width:max-content;
+  margin-top:10px;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+
+.presente-status{
+  color:#166534;
+  background:#DCFCE7;
+  border:1px solid #86EFAC;
+}
+
+.faltou-status{
+  color:#991B1B;
+  background:#FEE2E2;
+  border:1px solid #FCA5A5;
+}

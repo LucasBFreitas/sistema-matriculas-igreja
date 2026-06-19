@@ -180,3 +180,22 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.3 – Seleção visual de presença
+
+Implementado:
+
+- Melhor destaque visual ao marcar **Presente**.
+- Melhor destaque visual ao marcar **Faltou**.
+- O card do aluno muda de aparência conforme a escolha.
+- O botão selecionado ganha ícone:
+  - ✓ Presente
+  - ✕ Faltou
+- Adicionado aviso visual no card:
+  - Aluno marcado como PRESENTE
+  - Aluno marcado como FALTOU
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
