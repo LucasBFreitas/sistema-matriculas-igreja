@@ -1695,3 +1695,60 @@ input:disabled{opacity:.65;cursor:not-allowed}
 .alert.error{
   display:none!important;
 }
+
+
+/* ===== V12.3.6 - TOAST DEFINITIVO ===== */
+.legacy-alert-hidden,
+.alert,
+.alert.success,
+.alert.error,
+main > .success,
+main > .error,
+main > div.success,
+main > div.error{
+  display:none!important;
+  visibility:hidden!important;
+  height:0!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  overflow:hidden!important;
+}
+
+/* Garante que o toast continue visível mesmo se tiver classe success/error */
+.toast-container{
+  display:block!important;
+  visibility:visible!important;
+  height:auto!important;
+  min-height:unset!important;
+  position:fixed!important;
+  top:92px!important;
+  right:24px!important;
+  z-index:10000!important;
+  max-width:min(420px, calc(100vw - 32px))!important;
+  pointer-events:none!important;
+}
+
+.toast-container .toast{
+  display:block!important;
+  visibility:visible!important;
+  height:auto!important;
+  padding:14px 18px!important;
+  border-radius:16px!important;
+  font-weight:800!important;
+  box-shadow:0 18px 45px rgba(15,23,42,.18)!important;
+  animation:toastIn .28s ease both!important;
+}
+
+.toast-container .toast.success{
+  color:#166534!important;
+  background:#DCFCE7!important;
+  border:1px solid #86EFAC!important;
+}
+
+.toast-container .toast.error{
+  color:#991B1B!important;
+  background:#FEE2E2!important;
+  border:1px solid #FCA5A5!important;
+}

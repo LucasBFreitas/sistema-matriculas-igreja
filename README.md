@@ -227,3 +227,17 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.6 – Toast definitivo
+
+Correção implementada:
+
+- Remoção mais agressiva das mensagens antigas.
+- Qualquer faixa antiga de mensagem fica oculta via CSS.
+- Apenas o toast flutuante permanece visível.
+- O toast continua sumindo automaticamente.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
