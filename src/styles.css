@@ -1687,3 +1687,11 @@ input:disabled{opacity:.65;cursor:not-allowed}
     max-width:none;
   }
 }
+
+
+/* ===== V12.3.5 - LIMPEZA DEFINITIVA DAS MENSAGENS ===== */
+.alert,
+.alert.success,
+.alert.error{
+  display:none!important;
+}

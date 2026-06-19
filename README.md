@@ -213,3 +213,17 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.5 – Limpeza definitiva das mensagens
+
+Correção implementada:
+
+- Removida a faixa antiga de mensagem no topo da página.
+- Mensagens de sucesso e erro agora aparecem somente como **toast**.
+- O toast continua sumindo automaticamente.
+- O layout não é mais empurrado para baixo por mensagens fixas.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
