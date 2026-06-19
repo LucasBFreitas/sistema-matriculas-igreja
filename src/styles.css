@@ -1518,3 +1518,23 @@ input:disabled{opacity:.65;cursor:not-allowed}
     flex-direction:column;
   }
 }
+
+
+/* ===== V12.3.0 - CONTROLE DE PRESENÇA ===== */
+.chamada-item .actions{
+  margin-top:12px;
+}
+
+.small.present{
+  background:#16a34a!important;
+  color:#fff!important;
+}
+
+.small.active{
+  transform:scale(1.03);
+  box-shadow:0 0 0 3px rgba(22,163,74,.18);
+}
+
+.small.danger.active{
+  box-shadow:0 0 0 3px rgba(220,38,38,.18);
+}

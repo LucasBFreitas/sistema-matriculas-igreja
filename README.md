@@ -123,3 +123,24 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.0 – Controle de Presença
+
+Implementado:
+
+- Nova aba **Presenças**.
+- Seleção de:
+  - Período letivo
+  - Turma
+  - Data da chamada
+- Lista os alunos matriculados na turma/período.
+- Botões:
+  - Presente
+  - Faltou
+- Salva a lista de presença.
+- Relatórios agora têm coluna **Presenças** com o total de presenças do aluno.
+
+SQL obrigatório:
+
+Rode `supabase/atualizacao_v12_3_0.sql` no Supabase antes de subir a versão.
