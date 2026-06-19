@@ -241,3 +241,16 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.7 – Somente Toast
+
+Correção implementada:
+
+- Removida diretamente do `main.jsx` qualquer renderização antiga de `msg` e `erro`.
+- Mantido apenas o toast flutuante.
+- Adicionada proteção visual para ocultar qualquer mensagem antiga que esteja no fluxo da página.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.

@@ -204,7 +204,7 @@ async function confirmarRenovacao(e){
  }).sort((a,b)=>b.percentual-a.percentual)
  const contagem=useMemo(()=>({ativos:alunosAtivos.length,matriculados:alunos.filter(a=>statusDoAluno(a)==='Matriculado').length,inativos:alunos.filter(a=>statusDoAluno(a)==='Inativo').length,excluidos:alunos.filter(a=>statusDoAluno(a)==='Excluído').length}),[alunos,matriculas])
  if(!session)return <main className="login-page premium-login-page"><section className="login-hero-panel"><div className="login-hero-content"><img src="/logo-viva-esperanca.png" alt="Logo Viva Esperança"/><h2>Projeto Viva Esperança</h2><p>Gestão simples, acolhedora e organizada para matrículas do projeto social.</p></div></section><form className="card login-card premium-login-card" onSubmit={login}><h1>Bem-vindo de volta</h1>
-        <p>Acesse para gerenciar suas matrículas</p><input placeholder="E-mail" value={email} onChange={e=>setEmail(e.target.value)} type="email" required/><input placeholder="Senha" value={senha} onChange={e=>setSenha(e.target.value)} type="password" required/>{erro&&<div className="erro">{erro}</div>}<button>Entrar</button></form></main>
+        <p>Acesse para gerenciar suas matrículas</p><input placeholder="E-mail" value={email} onChange={e=>setEmail(e.target.value)} type="email" required/><input placeholder="Senha" value={senha} onChange={e=>setSenha(e.target.value)} type="password" required/><button>Entrar</button></form></main>
  const abas=[['painel','🏠 Painel'],['alunos','🎓 Estudantes'],['professores','👨‍🏫 Professores'],['cursos','📚 Cursos'],['periodos','🗓️ Períodos'],['turmas','🏫 Turmas'],['inscricoes','📝 Inscrições'],['presencas','✅ Presenças'],['relatorios','📊 Relatórios']]
  return <main className="app-shell"><header className="app-header-fixed premium-header">
         <div className="brand-fixed">
@@ -215,7 +215,7 @@ async function confirmarRenovacao(e){
           <span className="admin-pill">Administrador</span>
           <button className="logout-fixed" onClick={sair}>Sair</button>
         </div>
-      </header><nav className="tabs">{abas.map(([id,n])=><button key={id} className={aba===id?'active':''} onClick={()=>setAba(id)}>{n}</button>)}</nav>{erro&&<div className="erro">{erro}</div>}{msg&&<div className="ok">{msg}</div>}{loading&&<p className="loading-premium">Atualizando dados...</p>}
+      </header><nav className="tabs">{abas.map(([id,n])=><button key={id} className={aba===id?'active':''} onClick={()=>setAba(id)}>{n}</button>)}</nav>{loading&&<p className="loading-premium">Atualizando dados...</p>}
  {(msg||erro)&&<div className="toast-container"><div className={erro?'toast error':'toast success'}>{erro||msg}</div></div>}{aba==='painel'&&<section className="dashboard-inteligente">
   <div className="dashboard-hero card">
     <div>
