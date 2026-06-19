@@ -254,3 +254,25 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.3.8 – Rolagem interna das listas
+
+Implementado:
+
+- As listas do lado direito agora possuem rolagem própria.
+- A página inteira não fica mais extremamente longa por causa das listas.
+- Aplicado para módulos em duas colunas, como:
+  - Estudantes
+  - Professores
+  - Cursos
+  - Turmas
+  - Inscrições
+  - Presenças
+  - Relatórios
+- A barra de rolagem da lista tem visual personalizado.
+- Título e campo de busca permanecem visíveis durante a rolagem da lista.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.

@@ -1782,3 +1782,71 @@ main > div:not(.toast-container)[class*="alert"]{
   font-weight:900!important;
   box-shadow:0 18px 45px rgba(15,23,42,.18)!important;
 }
+
+
+/* ===== V12.3.8 - ROLAGEM INTERNA DAS LISTAS ===== */
+
+/* Evita que a página inteira cresça demais */
+body{
+  overflow-y:auto;
+}
+
+/* Em telas grandes, o card da direita vira uma área com rolagem própria */
+@media(min-width:901px){
+  section.grid.two{
+    align-items:start;
+  }
+
+  section.grid.two > .card:nth-child(2){
+    max-height:calc(100vh - 190px);
+    overflow-y:auto;
+    overflow-x:hidden;
+    scrollbar-width:thin;
+    scrollbar-color:#2E7D32 #EAF3ED;
+  }
+
+  section.grid.two > .card:nth-child(2)::-webkit-scrollbar{
+    width:10px;
+  }
+
+  section.grid.two > .card:nth-child(2)::-webkit-scrollbar-track{
+    background:#EAF3ED;
+    border-radius:999px;
+  }
+
+  section.grid.two > .card:nth-child(2)::-webkit-scrollbar-thumb{
+    background:#2E7D32;
+    border-radius:999px;
+    border:2px solid #EAF3ED;
+  }
+
+  section.grid.two > .card:nth-child(2)::-webkit-scrollbar-thumb:hover{
+    background:#166534;
+  }
+
+  /* Mantém títulos e filtros do card da direita visíveis durante a rolagem */
+  section.grid.two > .card:nth-child(2) > h2:first-child,
+  section.grid.two > .card:nth-child(2) > .form-title:first-child{
+    position:sticky;
+    top:0;
+    z-index:5;
+    background:#fff;
+    padding-bottom:14px;
+  }
+
+  section.grid.two > .card:nth-child(2) .search-row{
+    position:sticky;
+    top:54px;
+    z-index:4;
+    background:#fff;
+    padding-bottom:12px;
+  }
+}
+
+/* Em telas menores, mantém o comportamento natural para não quebrar o mobile */
+@media(max-width:900px){
+  section.grid.two > .card:nth-child(2){
+    max-height:none;
+    overflow:visible;
+  }
+}
