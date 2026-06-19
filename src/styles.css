@@ -1926,3 +1926,31 @@ body{
     gap:6px;
   }
 }
+
+
+/* ===== V12.4.1 - MENU DE MÓDULOS FIXO ===== */
+nav{
+  position:sticky!important;
+  top:0!important;
+  z-index:9000!important;
+  background:rgba(244,248,245,.96)!important;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #DDE7E0;
+  box-shadow:0 10px 28px rgba(15,23,42,.06);
+  padding-top:16px!important;
+  padding-bottom:16px!important;
+}
+
+/* Garante que o toast fique acima do menu fixo */
+.toast-container{
+  z-index:10000!important;
+}
+
+/* Em telas menores, permite rolagem horizontal do menu sem quebrar */
+@media(max-width:900px){
+  nav{
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:thin;
+  }
+}

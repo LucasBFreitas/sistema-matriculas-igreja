@@ -304,3 +304,17 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.4.1 – Menu de módulos fixo
+
+Implementado:
+
+- A barra de módulos permanece fixa ao rolar a tela.
+- O menu passa a se comportar como parte do navbar.
+- Mantido o visual com fundo suave e sombra.
+- Em telas menores, o menu pode rolar horizontalmente.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
