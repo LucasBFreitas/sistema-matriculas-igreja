@@ -405,3 +405,12 @@ Correção:
 - Formulário para cadastrar e-mail e perfil.
 - Lista de perfis cadastrados.
 - SQL incluso em `supabase/atualizacao_v12_5_3.sql`.
+
+## V12.5.4 – Fix definitivo da aba Acessos
+
+Correção:
+- Corrigida a tela branca ao clicar em **Acessos**.
+- As funções e variáveis da aba Acessos agora são declaradas antes da renderização.
+- Mantido formulário de criação de acesso.
+- Mantida lista de perfis cadastrados.
+- SQL incluso em `supabase/atualizacao_v12_5_4.sql`.

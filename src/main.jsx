@@ -220,7 +220,30 @@ async function confirmarRenovacao(e){
   return {...t,total,ocupadas,disponiveis,percentual}
  }).sort((a,b)=>b.percentual-a.percentual)
  const contagem=useMemo(()=>({ativos:alunosAtivos.length,matriculados:alunos.filter(a=>statusDoAluno(a)==='Matriculado').length,inativos:alunos.filter(a=>statusDoAluno(a)==='Inativo').length,excluidos:alunos.filter(a=>statusDoAluno(a)==='Excluído').length}),[alunos,matriculas])
- if(!session)return <main className="login-page premium-login-page"><section className="login-hero-panel"><div className="login-hero-content"><img src="/logo-viva-esperanca.png" alt="Logo Viva Esperança"/><h2>Projeto Viva Esperança</h2><p>Gestão simples, acolhedora e organizada para matrículas do projeto social.</p></div></section><form className="card login-card premium-login-card" onSubmit={login}><h1>Bem-vindo de volta</h1>
+  const isAdmin=perfilUsuario==='administrador'
+ const isCoordenador=perfilUsuario==='coordenador'||isAdmin
+
+ async function salvarUsuarioPerfil(e){
+  e.preventDefault()
+  const emailPerfil=usuarioForm.email.trim().toLowerCase()
+  if(!emailPerfil)return falhar('Informe o e-mail do usuário.')
+  const payload={email:emailPerfil,perfil:usuarioForm.perfil,professor_id:usuarioForm.professor_id||null}
+  const {error}=await supabase.from('usuarios_perfis').upsert(payload,{onConflict:'email'})
+  if(error)return falhar(error.message)
+  setUsuarioForm({email:'',perfil:'professor',professor_id:''})
+  await carregarPerfisAcesso()
+  setMsg('Perfil de acesso salvo.')
+ }
+
+ async function excluirUsuarioPerfil(email){
+  if(!confirm('Remover perfil de acesso?'))return
+  const {error}=await supabase.from('usuarios_perfis').delete().eq('email',email)
+  if(error)return falhar(error.message)
+  await carregarPerfisAcesso()
+  setMsg('Perfil removido.')
+ }
+
+if(!session)return <main className="login-page premium-login-page"><section className="login-hero-panel"><div className="login-hero-content"><img src="/logo-viva-esperanca.png" alt="Logo Viva Esperança"/><h2>Projeto Viva Esperança</h2><p>Gestão simples, acolhedora e organizada para matrículas do projeto social.</p></div></section><form className="card login-card premium-login-card" onSubmit={login}><h1>Bem-vindo de volta</h1>
         <p>Acesse para gerenciar suas matrículas</p><input placeholder="E-mail" value={email} onChange={e=>setEmail(e.target.value)} type="email" required/><input placeholder="Senha" value={senha} onChange={e=>setSenha(e.target.value)} type="password" required/><button>Entrar</button></form></main>
  const abas=[['painel','🏠 Painel'],['alunos','🎓 Alunos'],['professores','👨‍🏫 Professores'],['cursos','📚 Cursos'],['periodos','🗓️ Períodos'],['turmas','🏫 Turmas'],['inscricoes','📝 Inscrições'],['presencas','✅ Presenças'],['relatorios','📊 Relatórios'],['acessos','🔐 Acessos']]
  return <main className="app-shell"><header className="app-header-fixed premium-header">

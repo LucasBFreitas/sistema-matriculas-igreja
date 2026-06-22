@@ -2038,3 +2038,10 @@ nav{
   font-weight:700;
   line-height:1.45;
 }
+
+/* ===== V12.5.4 - FIX DEFINITIVO ACESSOS ===== */
+.acessos-layout .muted,.muted{
+  color:#607080;
+  font-weight:700;
+  line-height:1.45;
+}
