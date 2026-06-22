@@ -414,3 +414,15 @@ Correção:
 - Mantido formulário de criação de acesso.
 - Mantida lista de perfis cadastrados.
 - SQL incluso em `supabase/atualizacao_v12_5_4.sql`.
+
+## V12.5.5 – Correção de deploy Vercel/NPM
+
+Correção:
+- Removido `package-lock.json` gerado em ambiente interno.
+- Adicionado `.npmrc` apontando para o registry público do npm.
+- Mantida a implementação da aba **Acessos** da V12.5.4.
+- Resolve erro de deploy `ETIMEDOUT` ao tentar baixar pacotes de registry interno.
+
+SQL:
+- Se ainda não rodou, rode `supabase/atualizacao_v12_5_4.sql`.
+- Se já rodou, não precisa rodar novamente.
