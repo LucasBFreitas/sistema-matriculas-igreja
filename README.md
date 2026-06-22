@@ -350,3 +350,22 @@ Correção implementada:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.4.5 – Padronização Alunos
+
+Correções implementadas:
+
+- Menu alterado de **Estudantes** para **Alunos**.
+- Título da listagem alterado de **Estudantes** para **Alunos**.
+- Card do Dashboard alterado de **Alunos ativos** para **Alunos cadastrados**.
+- Contador do card **Alunos cadastrados** agora considera todos os alunos cadastrados:
+  - Ativos
+  - Matriculados
+  - Sem matrícula
+  - Inativos
+  - Excluídos
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
