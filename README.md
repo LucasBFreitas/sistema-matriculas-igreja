@@ -384,3 +384,15 @@ SQL obrigatório:
 Rode `supabase/atualizacao_v12_5_1.sql`.
 
 Depois cadastre seu e-mail como administrador na tabela `usuarios_perfis`.
+
+## V12.5.2 – Aba Acessos Visível
+
+Correções:
+- Adicionada a aba **Acessos** no menu principal.
+- Criado formulário para cadastrar e definir perfil de usuário.
+- Perfis disponíveis: Professor, Coordenador e Administrador.
+- Lista de perfis cadastrados com opção de remover.
+- Mantida estabilidade das demais abas.
+
+SQL obrigatório:
+Rode `supabase/atualizacao_v12_5_2.sql`.
