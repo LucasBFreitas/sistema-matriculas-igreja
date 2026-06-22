@@ -2025,3 +2025,6 @@ nav{
     grid-template-columns:1fr;
   }
 }
+
+/* ===== V12.5.0 - CONTROLE DE ACESSO ===== */
+.muted{color:#607080;font-weight:700;line-height:1.45}
