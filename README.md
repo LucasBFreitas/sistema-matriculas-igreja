@@ -370,17 +370,17 @@ Banco de dados:
 
 - Não precisa rodar SQL novo.
 
-## V12.5.0 – Controle de Acesso por Perfil
+## V12.5.1 – Controle de Acesso Estável
 
-Implementado:
-- Nova aba **Acessos**.
+Correções:
+- Refeito o controle de acesso de forma mais segura.
+- Corrige tela branca ao clicar em abas como Professores.
+- Nova aba **Acessos** para administradores.
 - Perfis: Administrador, Coordenador e Professor.
-- Administrador gerencia tudo.
-- Coordenador gerencia cadastros, inscrições, presenças e relatórios.
-- Professor vê painel, presenças e relatórios.
-- Badge superior mostra o perfil do usuário.
+- Badge superior mostra o perfil.
+- Se a tabela de perfis ainda não existir, o sistema não quebra.
 
 SQL obrigatório:
-Rode `supabase/atualizacao_v12_5_0.sql`.
+Rode `supabase/atualizacao_v12_5_1.sql`.
 
 Depois cadastre seu e-mail como administrador na tabela `usuarios_perfis`.
