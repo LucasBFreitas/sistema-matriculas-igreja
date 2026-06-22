@@ -2031,3 +2031,10 @@ nav{
 
 /* ===== V12.5.2 - ABA ACESSOS ===== */
 .muted{color:#607080;font-weight:700;line-height:1.45}
+
+/* ===== V12.5.3 - FIX ACESSOS TELA BRANCA ===== */
+.acessos-layout .muted,.muted{
+  color:#607080;
+  font-weight:700;
+  line-height:1.45;
+}

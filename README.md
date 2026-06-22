@@ -396,3 +396,12 @@ Correções:
 
 SQL obrigatório:
 Rode `supabase/atualizacao_v12_5_2.sql`.
+
+## V12.5.3 – Correção da aba Acessos
+
+Correção:
+- Corrigida tela branca ao clicar em **Acessos**.
+- Refeito o bloco visual da aba Acessos com JSX mais simples e estável.
+- Formulário para cadastrar e-mail e perfil.
+- Lista de perfis cadastrados.
+- SQL incluso em `supabase/atualizacao_v12_5_3.sql`.
