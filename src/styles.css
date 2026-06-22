@@ -2025,16 +2025,3 @@ nav{
     grid-template-columns:1fr;
   }
 }
-
-
-/* V12.4.3 LOGIN MODERNO */
-.login-title{
- font-family:'Poppins',sans-serif;
- font-weight:600;
- letter-spacing:-0.5px;
- color:#142235;
-}
-.login-subtitle{
- color:#667085;
- font-weight:500;
-}

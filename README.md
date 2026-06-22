@@ -335,3 +335,18 @@ Implementado:
 Banco de dados:
 
 - Não precisa rodar SQL novo.
+
+
+## V12.4.4 – Bloqueio real de matrícula por status
+
+Correção implementada:
+
+- Alunos inativos não aparecem mais no seletor da tela de Inscrições.
+- Alunos excluídos não aparecem mais no seletor da tela de Inscrições.
+- Mesmo que o aluno seja forçado no formulário, o salvamento da matrícula é bloqueado.
+- Renovação/Reativação também bloqueia aluno com cadastro inativo ou excluído.
+- Mensagem toast informa que o cadastro precisa ser ativado antes da matrícula.
+
+Banco de dados:
+
+- Não precisa rodar SQL novo.
