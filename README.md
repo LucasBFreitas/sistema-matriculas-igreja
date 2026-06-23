@@ -426,3 +426,14 @@ Correção:
 SQL:
 - Se ainda não rodou, rode `supabase/atualizacao_v12_5_4.sql`.
 - Se já rodou, não precisa rodar novamente.
+
+## V12.5.7-A – Acessos simples
+
+Objetivo:
+- Corrigir a abertura da aba **Acessos**.
+- Cadastrar e listar perfis de acesso.
+- Não aplicar restrições ainda.
+- Não alterar os outros módulos.
+
+SQL:
+- Rode `supabase/atualizacao_v12_5_7a.sql` se a tabela `usuarios_perfis` ainda não existir.
