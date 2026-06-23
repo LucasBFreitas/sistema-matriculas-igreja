@@ -450,3 +450,29 @@ Correção:
 
 SQL:
 - Se já rodou a atualização de `usuarios_perfis`, não precisa rodar novamente.
+
+## V12.5.7-C – Menu por perfil
+
+Implementado nesta etapa:
+- Administrador vê todas as abas.
+- Coordenador vê todas as abas, inclusive Acessos, mas não pode modificar acessos.
+- Professor vê apenas: Painel, Turmas, Inscrições, Presenças e Relatórios.
+- Nenhuma regra interna de edição/relatório foi alterada ainda.
+
+Próxima etapa sugerida:
+- Filtrar os dados do professor para mostrar apenas suas turmas, inscrições, presenças e relatórios.
+
+Correção final V12.5.7-C: filtro aplicado diretamente no menu `abas.filter(([id])=>podeVerAba(id))`.
+
+## V12.5.8 – Restrição de dados do professor
+
+Implementado:
+- Professor usa o `professor_id` vinculado em `usuarios_perfis`.
+- Professor visualiza apenas suas turmas.
+- Professor visualiza apenas inscrições das suas turmas.
+- Professor lança/consulta presenças apenas das suas turmas.
+- Relatórios do professor ficam limitados às suas turmas.
+- Administrador e Coordenador continuam com visualização completa.
+- Professor fica bloqueado para criar/editar/excluir turmas e inscrições.
+
+Sem alteração de banco nesta etapa.
