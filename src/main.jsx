@@ -225,8 +225,6 @@ async function confirmarRenovacao(e){
 
 
 
- const isAdmin=perfilUsuario==='administrador'
- const isCoordenador=perfilUsuario==='coordenador'||isAdmin
  const isProfessor=perfilUsuario==='professor'
 
  async function salvarUsuarioPerfil(e){

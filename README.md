@@ -437,3 +437,16 @@ Objetivo:
 
 SQL:
 - Rode `supabase/atualizacao_v12_5_7a.sql` se a tabela `usuarios_perfis` ainda não existir.
+
+## V12.5.7-B – Correção de constantes duplicadas
+
+Correção:
+- Removida duplicidade de `isAdmin`.
+- Removida duplicidade de `isCoordenador`.
+- Mantida `isProfessor` apenas uma vez.
+- Mantida a aba **Acessos** simples, sem aplicar restrições ainda.
+- Removido `package-lock.json`, se existia.
+- Mantido `.npmrc` com registry público do npm.
+
+SQL:
+- Se já rodou a atualização de `usuarios_perfis`, não precisa rodar novamente.
