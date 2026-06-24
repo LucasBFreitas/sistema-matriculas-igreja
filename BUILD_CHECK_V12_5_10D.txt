@@ -1,0 +1,7 @@
+V12.5.10-D
+Correção: removido package-lock.json do pacote final.
+
+Antes de subir no GitHub, confirme:
+- package-lock.json NÃO existe
+- .npmrc existe e contém: registry=https://registry.npmjs.org/
+- package.json está limpo
