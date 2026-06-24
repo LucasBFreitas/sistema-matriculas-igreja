@@ -1,0 +1,11 @@
+V12.5.10-A
+Alteração única: filtro visual do relatório para Professor.
+
+select_relatorio_alterado=True
+package_lock_removido=True
+sql_necessario=False
+
+Observação:
+- Esta etapa altera somente as opções exibidas no select de Relatórios.
+- Não altera impressão.
+- Não altera funções internas.

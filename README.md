@@ -492,7 +492,11 @@ Implementado:
 Banco:
 - Não exige nova alteração no Supabase.
 
-## V12.5.10-C – Fix tipoRelatorio
-- Corrige tela branca causada por `tipoRelatorio is not defined`.
-- Professor vê no filtro de relatórios apenas suas turmas.
+## V12.5.10-A – Filtro visual de relatório do professor
+
+Alteração única desta etapa:
+- No perfil Professor, o select de Relatórios mostra apenas as turmas vinculadas ao professor.
+- Administrador e Coordenador continuam vendo os filtros gerais e as turmas.
+- Não altera impressão.
+- Não altera presença, turmas, inscrições ou banco de dados.
 - Não exige SQL.
