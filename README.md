@@ -499,3 +499,11 @@ Correção:
 - Professor vê apenas turmas vinculadas ao seu professor_id.
 - Professor só emite relatório das próprias turmas.
 - Administrador e Coordenador continuam com todos os filtros.
+
+## V12.5.10-B – Correção tela branca
+
+Correção:
+- Adicionada função `nomeTurma(t)` que estava sendo usada no relatório do professor.
+- Corrige tela branca causada por erro JavaScript em tempo de execução.
+- Mantém a regra: professor vê apenas relatórios das próprias turmas.
+- Não exige alteração no banco.

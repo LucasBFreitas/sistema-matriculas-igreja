@@ -129,6 +129,14 @@ async function confirmarRenovacao(e){
   if(p.status==='faltou')acc[key].faltas+=1
   return acc
  },{})).sort((a,b)=>String(b.data_chamada).localeCompare(String(a.data_chamada)))
+ 
+ function nomeTurma(t){
+  if(!t)return 'Turma não encontrada'
+  const curso=t.cursos?.nome||t.curso_nome||''
+  const nome=t.nome||''
+  return `${curso}${curso&&nome?' - ':''}${nome}`||'Turma sem nome'
+ }
+
  function nomeTurmaPresenca(lista){const t=turmas.find(x=>x.id===lista.turma_id);return t?`${t.cursos?.nome||''} - ${t.nome||''}`:'Turma não encontrada'}
  function nomePeriodoPresenca(lista){return periodosLetivos.find(p=>p.id===lista.periodo_letivo_id)?.nome||'-'}
  function abrirListaPresenca(lista){
