@@ -1,0 +1,16 @@
+BUILD_OK=True
+
+
+> build
+> vite build
+
+[36mvite v8.1.0 [32mbuilding client environment for production...[36m[39m
+[2K
+transforming...[32m✓[0m 58 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[0m[32mindex.html                 [0m[1;2m  0.40 kB[0m[2m │ gzip:   0.27 kB[0m
+[2mdist/[0m[2massets/[0m[35mindex-BHq0zlpC.css  [0m[1;2m 30.41 kB[0m[2m │ gzip:   6.32 kB[0m
+[2mdist/[0m[2massets/[0m[36mindex-nlZHBaaD.js   [0m[1;2m444.31 kB[0m[2m │ gzip: 123.22 kB[0m
+
+[32m✓ built in 486ms[39m
