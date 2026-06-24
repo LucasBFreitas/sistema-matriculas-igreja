@@ -476,3 +476,26 @@ Implementado:
 - Professor fica bloqueado para criar/editar/excluir turmas e inscrições.
 
 Sem alteração de banco nesta etapa.
+
+## V12.5.9 – Modo leitura do professor
+
+Implementado:
+- Professor vê Turmas em modo leitura.
+- Professor vê Inscrições em modo leitura.
+- Formulários administrativos de Turmas e Inscrições ficam ocultos para Professor.
+- Ações administrativas de Turmas e Inscrições ficam ocultas para Professor.
+- Professor mantém Presenças liberado.
+- Relatórios continuam limitados às turmas do professor.
+- Coordenador continua podendo visualizar Acessos, sem modificar.
+- Administrador continua com acesso total.
+
+Banco:
+- Não exige nova alteração no Supabase.
+
+## V12.5.10 – Relatórios do professor somente por turma
+
+Correção:
+- Professor não visualiza filtros gerais de relatório.
+- Professor vê apenas turmas vinculadas ao seu professor_id.
+- Professor só emite relatório das próprias turmas.
+- Administrador e Coordenador continuam com todos os filtros.

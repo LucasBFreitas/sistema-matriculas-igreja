@@ -2052,3 +2052,39 @@ nav{
   font-weight:700;
   line-height:1.45;
 }
+
+/* ===== V12.5.9 - MODO LEITURA PROFESSOR ===== */
+.read-only-alert{
+  margin: 14px 28px 0;
+  padding: 14px 18px;
+  border: 1px solid #bbf7d0;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 16px;
+  font-weight: 800;
+}
+
+/* Professor: esconde o card de formulário nas abas em que ele só visualiza */
+.professor-readonly-shell[data-aba="turmas"] .grid.two > .card:first-child,
+.professor-readonly-shell[data-aba="inscricoes"] .grid.two > .card:first-child{
+  display:none;
+}
+
+.professor-readonly-shell[data-aba="turmas"] .grid.two,
+.professor-readonly-shell[data-aba="inscricoes"] .grid.two{
+  grid-template-columns: 1fr;
+}
+
+/* Professor: esconde ações administrativas nas listas de turmas e inscrições */
+.professor-readonly-shell[data-aba="turmas"] .actions,
+.professor-readonly-shell[data-aba="inscricoes"] .actions{
+  display:none !important;
+}
+
+/* Acessos: coordenador visualiza, mas não edita */
+.acessos-layout select:disabled,
+.acessos-layout input:disabled{
+  opacity:.8;
+  cursor:not-allowed;
+  background:#f8fafc;
+}
